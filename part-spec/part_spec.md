@@ -720,3 +720,222 @@
     * format: i2c, spi, enables, etc.
     * type: float
     * optional
+
+# hardware
+## switch
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* type
+    * property describing the way in which the switch is activated
+    * format: toggle, slide, rocker, push-button, etc.
+    * type: string
+    * optional
+* contactType
+    * property describing the order in which switch contact is made and broken
+    * format: break-before-make, make-before-break
+    * type: string
+    * optional
+* circuitConfig
+    * property describing the number of poles and throws in a switch
+    * format: SPST, SPDT, DPDT, DPST
+    * type: string
+    * optional
+* cycleRating
+    * number of on/off cycles a mechanical switch can reliably sustain
+    * type: float
+    * optional
+* voltageRating
+    * maximum DC voltage potential that can be applied across an open switch
+    * unit: volts
+    * type: float
+    * optional
+* currentRating
+    * maximum DC current that can flow through a closed switch without causing excessive heating
+    * unit: amps
+    * type: float
+    * optional
+* onResistance
+    * nominal resistance of a closed switch
+    * unit: ohms
+    * type: float
+    * optional
+* dielectricRating
+    * maximum AC voltage potential that can be applied across an open switch for one minute
+    * unit: volts
+    * type: float
+    * optional
+
+## test point
+* shape
+    * shape of the test point
+    * format: circle, square, oval
+    * type: string
+    * required
+* length
+    * longer dimension of a rectangular or oval test point
+    * unit: mm
+    * type: float
+    * optional
+* length
+    * shorter dimension of a rectangular or oval test point
+    * unit: mm
+    * type: float
+    * optional
+* diameter
+    * diameter of a circular test point
+    * unit: mm
+    * type: float
+    * optional
+
+## connector
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* function
+    * intended function of a connector
+    * format: headphone jack, USB-C, HDMI, etc.
+    * type: string
+    * optional
+* contactCount
+    * number of contacts in a connector
+    * type: float
+    * optional
+* type
+    * property describing the method of mating to the connector
+    * format: plug, receptacle, header, jumper, etc.
+    * type: string
+    * optional
+* cycleRating
+    * number of plug/unplug cycles a connector is rated to support
+    * type: float
+    * optional
+* zHeight
+    * maximum height of a mounted connector from the PCB surface
+    * unit: mm
+    * type: float
+    * optional
+* pitch
+    * distance from the center of one contact on the connector to the center of the next contact
+    * unit: mm
+    * type: float
+    * optional
+* keying
+    * property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction
+    * format: yes, no
+    * type: string
+    * optional
+
+# ic logic
+## logic gate
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* type
+    * logical operation performed by logic gate
+    * format: and, or, nor, nand, inverter, buffer, configurable
+    * type: string
+    * required
+* numberGates
+    * number of logical gates encapsulated in logic IC
+    * type: float
+    * optional
+* schmittTrigger
+    * property describing whether logic gate has schmitt trigger inputs
+    * format: yes, no
+    * type: string
+    * optional
+* propagationDelay
+    * time between input changing to output changing
+    * unit: seconds
+    * type: float
+    * optional
+
+## clock
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* fixedFrequency
+    * clock frequency value if the clock has a fixed frequency
+    * unit: Hz
+    * type: float
+    * optional
+* minFrequency
+    * minimum clock frequency value if the clock has a configurable frequency
+    * unit: Hz
+    * type: float
+    * optional
+* maxFrequency
+    * maximum clock frequency value if the clock has a configurable frequency
+    * unit: Hz
+    * type: float
+    * optional
+* numberClockOutputs
+    * number of clock outputs in a clock IC
+    * type: float
+    * optional
+* diffSingleEnded
+    * property describing whether a clock output is single ended or differential
+    * format: diff, single
+    * type: string
+    * optional
+* jitter
+    * cycle to cycle clock jitter
+    * unit: seconds
+    * type: float
+    * optional
+* frequencyTolerance
+    * amount of frequency variation specced from nominal frequency
+    * unit: percentage
+    * type: float
+    * optional
+* psrr
+    * power supply rejection ratio or ratio between power supply variation and output variation
+    * unit: dB
+    * type: float
+    * optional
+* outputFormat
+    * signal format of clock output
+    * format: lvpecl, lvds, hcsl, etc.
+    * type: string
+    * optional
+
+## power sequencing
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* targetApplication
+    * description of intended power sequencing chip application (example: KBL SOC, LPDDR4 memory, etc.)
+    * type: string
+    * optional
+* fixedConfigurable
+    * description of whether a power sequencing IC has fixed or configurable logic
+    * format: fixed, configurable
+    * type: string
+    * optional
+
