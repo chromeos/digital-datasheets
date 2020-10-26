@@ -7,6 +7,7 @@
     * json type
     * required/optional
     * automotive
+    * non rohm compliant
 
 # passives
 ## resistor
@@ -936,6 +937,761 @@
 * fixedConfigurable
     * description of whether a power sequencing IC has fixed or configurable logic
     * format: fixed, configurable
+    * type: string
+    * optional
+
+# ic misc
+## speaker amplifier
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* dataLength
+    * number of bits in a data word
+    * type: float
+    * optional
+* outputPower
+    * typical output power from speaker amplifier
+    * unit: watts
+    * type: float
+    * optional
+* outputPowerConditions
+    * decription of voltage and load conditions under which output power is measured
+    * format: (example) 4 ohms at 5V
+    * type: string
+    * optional
+* efficiency
+    * typical speaker amplifier efficiency
+    * unit: percentage
+    * type: float
+    * optional
+* efficiencyConditions
+    * description of load and THD+N conditions under which efficiency is measured
+    * format: (example) Rl = 8ohms, THD+N = 10%
+    * type: string
+    * optional
+* thd+n
+    * typical total harmonic distortion plus noise of amplifier
+    * unit: percentage
+    * type: float
+    * optional
+* thd+nConditions
+    * description of frequency, power, and load conditions under which thd+n is measured
+    * format: (example) f = 1kHz, pout = 1W, z speaker = 4ohms + 33uH
+    * type: string
+    * optional
+* sampleRate
+    * sample rate of data out of amplifier
+    * unit: Hz
+    * type: float
+    * optional
+* interface
+    * describes the communication interface from the chip to the host
+    * format: i2s, soundwire, etc.
+    * type: string
+    * optional
+
+## audio codec
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* dataLength
+    * number of bits in a data word
+    * type: float
+    * optional
+* hpOutputSNR
+    * headphone amplifier output SNR
+    * unit: dB
+    * type: float
+    * optional
+* hpOutputTHD+N
+    * headphone output total harmonic distortion plus noise
+    * unit: percentage
+    * type: float
+    * optional
+* micInputSNR
+    * microphone input SNR
+    * unit: dB
+    * type: float
+    * optional
+* micInputTHD+N
+    * microphone input total harmonic distortion plus noise
+    * unit: percentage
+    * type: float
+    * optional
+* jackDetect
+    * describes whether headphone jack detection is supported
+    * format: yes, no
+    * type: string
+    * optional
+* interface
+    * describes the communication interface from the chip to the host
+    * format: i2s, soundwire, etc.
+    * type: string
+    * optional
+
+## wlan module
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* wlanSpec
+    * version of wlan specification supported by module
+    * format: 802.11ac, 802.11ax, etc.
+    * type: string
+    * optional
+* bluetoothVersion
+    * version of bluetooth supported by module
+    * format: 4.0, 4.1, 5.0, etc.
+    * type: string
+    * optional
+* txrxChains
+    * number of tx and rx chains in a wifi module
+    * format: 2x2, 2x1, etc.
+    * type: string
+    * optional
+* m2FormFactor
+    * wlan module form factor described by jedec standard m.2 form factors
+    * format: 1216, 2230, etc.
+    * type: string
+    * optional
+* keying
+    * pcie card key
+    * format: E, hybrid-E, etc.
+    * type: string
+    * optional
+* lteCoexFilter
+    * describes whether module supports lte coexistance filtering
+    * format: yes, no
+    * type: string
+    * optional
+* interface
+    * describes the communication interface from the chip to the host
+    * format: pcie, cnvi, etc.
+    * type: string
+    * optional
+
+## wwan module
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* networkSupport
+    * networks supported by wwan module
+    * format: [3G, 4G, 5G]
+    * type []string
+    * optional
+* gpsSupport
+    * whether wwan module has gps support
+    * format: yes, no
+    * type: string
+    * optional
+* m2FormFactor
+    * wlan module form factor described by jedec standard m.2 form factors
+    * format: 3042
+    * type: string
+    * optional
+* keying
+    * pcie card key
+    * format: B, etc.
+    * type: string
+    * optional
+* interface
+    * describes the communication interface from the chip to the host
+    * format: pcie, usb3, etc.
+    * type: string
+    * optional
+
+## tpm
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* interface
+    * describes the communication interface from the chip to the host
+    * format: spi, i2c, lpc,
+    * type: string
+    * optional
+
+# ic micro
+## microcontroller/ec/asic
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* onChipFlash
+    * quantity of built-in flash in a microprocessor
+    * unit: KB
+    * type: float
+    * optional
+* onChipRAM
+    * quantity of built-in RAM in a microprocessor
+    * unit: KB
+    * type: float
+    * optional
+* interfaces
+    * list of supported interfaces in a microprocessor
+    * format: [i2c, spi, uart, espi, etc.]
+    * type: []string
+    * optional
+* coreProcessor
+    * description of core processor
+    * format: 32-bit ARM Cortex-M4
+    * type: string
+    * optional
+
+# ic io
+## usb-c port controller
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* pdVersion
+    * version of power delivery spec implemented by controller
+    * format: pd2, pd3
+    * type: string
+    * optional
+* vconnPowerSupport
+    * whether controller has support for vconn power
+    * format: yes, no
+    * type: string
+    * optional
+* vconnPowerLimit
+    * power limit supported by internal vconn switch (if supported)
+    * unit: watts
+    * type: float
+    * optional
+
+## bc12
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* hostMode
+    * whether host mode is supported by bc12 chip
+    * format: yes, no
+    * type: string
+    * optional
+* deviceMode
+    * whether device mode is supported by bc12 chip
+    * format: yes, no
+    * type: string
+    * optional
+
+## pd power mux
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* fastRoleSwap
+    * whether fast role swap is supported
+    * format: yes, no
+    * type: string
+    * optional
+* ccIsolation
+    * whether cc pins can be isolated through an internal switch
+    * format: yes, no
+    * type: string
+    * optional
+* deadBatteryMode
+    * whether dead battery mode is supported on cc pins
+    * format: yes, no
+    * type: string
+    * optional
+* reverseCurrentBlocking
+    * whether vbus power path supports reverse current blocking
+    * format: yes, no
+    * type: string
+    * optional
+* ocp
+    * over current protection limit provided on vbus power path
+    * unit: amps
+    * type: float
+    * optional
+* ovp
+    * over voltage protection limit provided on vbus power path
+    * unit: volts
+    * type: float
+    * optional
+
+## usb-c redriver/retimer
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* auxMux
+    * whether chip supports internal muxing of aux pins
+    * format: yes, no
+    * type: string
+    * optional
+* usbVersion
+    * highest version of usb spec supported by redriver/retimer
+    * format: 2.0, 3.1, 3.1 gen2, 4.0
+    * type: string
+    * optional
+* dpVersion
+    * highest version of dp spec supported by redriver/retimer
+    * format: hbr2, hbr3
+    * type: string
+    * optional
+* tbtVersion
+    * highest version of thunderbolt spec supported by redriver/retimer
+    * format: 2, 3, 4
+    * type: string
+    * optional
+* pcieVersion
+    * highest version of pcie spec supported by redriver/retimer
+    * format: gen2, gen3
+    * type: string
+    * optional
+
+## usb-c mux
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* vconnPowerSupport
+    * whether controller has support for vconn power
+    * format: yes, no
+    * type: string
+    * optional
+* vconnPowerLimit
+    * power limit supported by internal vconn switch (if supported)
+    * unit: watts
+    * type: float
+    * optional
+* redriving
+    * whether a mux includes redriving support
+    * format: yes, no
+    * type: string
+    * optional
+* auxMux
+    * whether chip supports internal muxing of aux pins
+    * format: yes, no
+    * type: string
+    * optional
+* usbVersion
+    * highest version of usb spec supported by redriver/retimer
+    * format: 2.0, 3.1, 3.1 gen2, 4.0
+    * type: string
+    * optional
+* dpVersion
+    * highest version of dp spec supported by redriver/retimer
+    * format: hbr2, hbr3
+    * type: string
+    * optional
+* tbtVersion
+    * highest version of thunderbolt spec supported by redriver/retimer
+    * format: 2, 3, 4
+    * type: string
+    * optional
+* pcieVersion
+    * highest version of pcie spec supported by redriver/retimer
+    * format: gen2, gen3
+    * type: string
+    * optional
+
+## usb-c mux/port controller
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* pdVersion
+    * version of power delivery spec implemented by controller
+    * format: pd2, pd3
+    * type: string
+    * optional
+* vconnPowerSupport
+    * whether controller has support for vconn power
+    * format: yes, no
+    * type: string
+    * optional
+* vconnPowerLimit
+    * power limit supported by internal vconn switch (if supported)
+    * unit: watts
+    * type: float
+    * optional
+* redriving
+    * whether a mux includes redriving support
+    * format: yes, no
+    * type: string
+    * optional
+* auxMux
+    * whether chip supports internal muxing of aux pins
+    * format: yes, no
+    * type: string
+    * optional
+* usbVersion
+    * highest version of usb spec supported by redriver/retimer
+    * format: 2.0, 3.1, 3.1 gen2, 4.0
+    * type: string
+    * optional
+* dpVersion
+    * highest version of dp spec supported by redriver/retimer
+    * format: hbr2, hbr3
+    * type: string
+    * optional
+* tbtVersion
+    * highest version of thunderbolt spec supported by redriver/retimer
+    * format: 2, 3, 4
+    * type: string
+    * optional
+* pcieVersion
+    * highest version of pcie spec supported by redriver/retimer
+    * format: gen2, gen3
+    * type: string
+    * optional
+
+## redriver
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* numberChannels
+    * number of lanes (single ended or differential) supported by redriver
+    * type: float
+    * optional
+* interface
+    * list of interface(s) supported by redriver
+    * format: [hdmi2, dp hbr3, usb3.1 gen2]
+    * type: []string
+    * optional
+* maxDataRate
+    * maximum data rate supported by redriver
+    * unit: Hz
+    * type: float
+    * optional
+
+## bridge chip
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* muxRatio
+    * ratio of inputs to outputs
+    * format: 2:1, 1:1, etc.
+    * type: string
+    * optional
+* inputInterfaces
+    * list of interfaces at the input of the bridge
+    * format: [hdmi2.0, dp hbr2]
+    * type: []string
+    * optional
+* outputInterfaces
+    * list of interfaces at the output of the bridge
+     * format: [dp hbr2]
+    * type: []string
+    * optional
+
+## level shifter
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* numberChannels
+    * number of lanes (single ended or differential) supported by redriver
+    * type: float
+    * optional
+* interface
+    * interface supported by redriver
+    * format: hdmi1.4, hdmi2.0, etc.
+    * type: string
+    * optional
+* inputVoltage
+    * input voltage level of level shifter
+    * unit: volts
+    * type: float
+    * optional
+* outputVoltage
+    * output voltage level of level shifter
+    * unit: volts
+    * type: float
+    * optional
+
+# sensor
+## accelerometer
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* accelerationRanges
+    * range of force that accelerometer can measure
+    * format: [2, 4, 8, 16]
+    * unit: g
+    * type: []float
+    * optional
+* sensitivity
+    * smallest change in force accelerometer is able to capture (typical). Corresponds to levels in acceleration ranges
+    * format: [16000, 8000, 4000, 2000]
+    * unit: LSB/g
+    * type: []float
+    * optional
+* axis
+    * number of axes of acceleration measurement
+    * type: float
+    * optional
+* interface
+    * interface(s) for communication to host
+    * format: [i2c, spi, analog]
+    * type: []string
+    * optional
+* bandwidth
+    * bandwidth of acceleration measurement
+    * unit: Hz
+    * type: float
+    * optional
+
+## accelerometer/gyro
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* accelerationRanges
+    * range of force that accelerometer can measure
+    * format: [2, 4, 8, 16]
+    * unit: g
+    * type: []float
+    * optional
+* accelerationSensitivity
+    * smallest change in force accelerometer is able to capture (typical). Corresponds to levels in acceleration ranges
+    * format: [16000, 8000, 4000, 2000]
+    * unit: LSB/g
+    * type: []float
+    * optional
+* gyroRanges
+    * range of angular speed that gyro can measure
+    * format: [125, 250, 500]
+    * unit: degrees-per-second (dps)
+    * type: []float
+    * optional
+* gyroSensitivity
+    * smallest change in angular speed gyro is able to capture (typical). Corresponds to levels in gyro ranges
+    * format: [16, 32, 65]
+    * unit: LSB/dps
+    * type: []float
+    * optional
+* axis
+    * number of axes of measurement
+    * type: float
+    * optional
+* interface
+    * interface(s) for communication to host
+    * format: [i2c, spi, analog]
+    * type: []string
+    * optional
+
+## magnetic sensor
+* type
+    * method by which magnetism is detected
+    * format: gmr, hall effect
+    * type: string
+    * required
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* trip
+    * magnetic threshold causing the sensor to output high
+    * unit: mT
+    * type: float
+    * optional
+* release
+    * magnetic threshold causing the sensor to output low
+    * unit: mT
+    * type: float
+    * optional
+
+## thermal
+* type
+    * method by which temperature is detected
+    * format: rtd, thermistor, silicon bandgap
+    * type: string
+    * required
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* interface
+    * interface(s) for communication to host
+    * format: [i2c, spi, analog]
+    * type: []string
+    * optional
+* resolution
+    * maximum resolution of temperature sensor
+    * unit: degreesC/LSD
+    * type: float
+    * optional
+
+# storage/memory
+## ssd
+* type
+    * type of ssd storage as defined by interface and technology
+    * format: emmc, sata, nvme
+    * type: string
+    * required
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* capacity
+    * capacity of SSD
+    * unit: GB
+    * type: float
+    * required
+* dataRate
+    * maximum data rate
+    * unit: GB/sec
+    * type: float
+    * optional
+* interface
+    * interface of ssd to host
+    * format: emmc 5.1, pcie gen3, etc.
+    * type: string
+    * optional
+
+## sd card reader
+* type
+    * type of sd card reader
+    * format: micro, full size
+    * type: string
+    * required
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+
+## dram
+* type
+    * type of dram
+    * format: lpddr3, ddr3, lpddr4, lpddr4x, ddr4, lpddr5, ddr5
+    * type: string
+    * required
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* capacity
+    * capacity of dram chip
+    * unit: Gb
+    * type: float
+    * required
+* speed
+    * dram maximum speed
+    * unit: Mbps
+    * type: float
+    * optional
+
+## rom
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* capacity
+    * capacity of rom
+    * unit: Mb
+    * type: float
+    * required
+* interface
+    * interace of rom to host
+    * format: spi, i2c
+    * type: string
+    * required
+* qeStatus
+    * indicates whether the QE bit is set
+    * format: yes, no
     * type: string
     * optional
 
