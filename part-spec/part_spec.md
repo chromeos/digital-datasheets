@@ -11,6 +11,23 @@
 
 # passives
 ## resistor
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * tolerance
     * nominal tolerance of a resistor
     * unit: %
@@ -43,6 +60,23 @@
     * optional
 
 ## capacitor
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * package
     * package size of capacitor
     * format: 0201, 2.0x1.0x0.5
@@ -108,6 +142,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * package
     * package size of inductor
     * format: 0201, 2.0x1.0x0.5
@@ -164,6 +207,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * package
     * package size of common mode choke
     * format: 0201, 2.0x1.0x0.5
@@ -210,6 +262,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * package
     * package size of ferrite bead
     * format: 0201, 2.0x1.0x0.5
@@ -256,6 +317,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * channel
     * doping of a transistor's channel - describes whether a transistor is n-type or p-type
     * format: nType, pType
@@ -331,6 +401,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * vf
     * forward voltage of a diode
     * unit: volts
@@ -417,6 +496,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * vinMin
     * minimum input voltage under which the part can be expected to operate properly
     * unit: volts
@@ -457,6 +545,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * vinMin
     * minimum input voltage under which the part can be expected to operate properly
     * unit: volts
@@ -507,6 +604,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * vinMin
     * minimum input voltage under which the part can be expected to operate properly
     * unit: volts
@@ -567,6 +673,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * batteryConfig
     * battery serial configurations supported by charger
     * format: 1S, 2S, 3S, 4S
@@ -632,6 +762,20 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
 * vinMin
     * minimum input voltage under which the part can be expected to operate properly
     * unit: volts
@@ -686,6 +830,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * targetApplication
     * description of intended PMIC application (example: KBL SOC, LPDDR4 memory, etc.)
     * type: string
@@ -732,6 +900,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * type
     * property describing the way in which the switch is activated
     * format: toggle, slide, rocker, push-button, etc.
@@ -773,6 +950,23 @@
     * optional
 
 ## test point
+* manufacturer
+    * company that manufacturers the part
+    * type: string
+    * required
+* mpn
+    * manufacturer part number
+    * type: string
+    * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * shape
     * shape of the test point
     * format: circle, square, oval
@@ -803,6 +997,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * function
     * intended function of a connector
     * format: headphone jack, USB-C, HDMI, etc.
@@ -847,6 +1050,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * type
     * logical operation performed by logic gate
     * format: and, or, nor, nand, inverter, buffer, configurable
@@ -876,6 +1088,20 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
 * fixedFrequency
     * clock frequency value if the clock has a fixed frequency
     * unit: Hz
@@ -930,6 +1156,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * targetApplication
     * description of intended power sequencing chip application (example: KBL SOC, LPDDR4 memory, etc.)
     * type: string
@@ -950,6 +1200,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * dataLength
     * number of bits in a data word
     * type: float
@@ -1004,6 +1263,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * dataLength
     * number of bits in a data word
     * type: float
@@ -1048,6 +1331,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * wlanSpec
     * version of wlan specification supported by module
     * format: 802.11ac, 802.11ax, etc.
@@ -1093,6 +1400,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * networkSupport
     * networks supported by wwan module
     * format: [3G, 4G, 5G]
@@ -1128,6 +1459,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * interface
     * describes the communication interface from the chip to the host
     * format: spi, i2c, lpc,
@@ -1144,6 +1484,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * onChipFlash
     * quantity of built-in flash in a microprocessor
     * unit: KB
@@ -1175,6 +1539,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * pdVersion
     * version of power delivery spec implemented by controller
     * format: pd2, pd3
@@ -1200,6 +1588,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * hostMode
     * whether host mode is supported by bc12 chip
     * format: yes, no
@@ -1220,6 +1617,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * fastRoleSwap
     * whether fast role swap is supported
     * format: yes, no
@@ -1260,6 +1666,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * auxMux
     * whether chip supports internal muxing of aux pins
     * format: yes, no
@@ -1295,6 +1725,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * vconnPowerSupport
     * whether controller has support for vconn power
     * format: yes, no
@@ -1345,6 +1799,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * pdVersion
     * version of power delivery spec implemented by controller
     * format: pd2, pd3
@@ -1400,6 +1878,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * numberChannels
     * number of lanes (single ended or differential) supported by redriver
     * type: float
@@ -1424,6 +1926,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * muxRatio
     * ratio of inputs to outputs
     * format: 2:1, 1:1, etc.
@@ -1449,6 +1975,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * numberChannels
     * number of lanes (single ended or differential) supported by redriver
     * type: float
@@ -1479,6 +2014,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * accelerationRanges
     * range of force that accelerometer can measure
     * format: [2, 4, 8, 16]
@@ -1515,6 +2074,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * accelerationRanges
     * range of force that accelerometer can measure
     * format: [2, 4, 8, 16]
@@ -1563,6 +2146,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * trip
     * magnetic threshold causing the sensor to output high
     * unit: mT
@@ -1588,6 +2195,15 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
 * interface
     * interface(s) for communication to host
     * format: [i2c, spi, analog]
@@ -1614,6 +2230,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * capacity
     * capacity of SSD
     * unit: GB
@@ -1644,6 +2284,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 
 ## dram
 * type
@@ -1659,6 +2323,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * capacity
     * capacity of dram chip
     * unit: Gb
@@ -1679,6 +2367,30 @@
     * manufacturer part number
     * type: string
     * required
+* version
+    * datasheet version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * required
+* referenceURI
+    * unique URI that can be dereferenced for additional information (driver, firmware, specs, documentation).  Follows IETF RFC 3896
+    * type:  string
+    * optional
+* softwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* firmwareVersion
+    * driver or app version following Semantic Versioning Specification including major, minor and patch version 
+    * format: Major Version X (X.y.z | X > 0) Minor version Y (x.Y.z | Y > 0) Patch version Z (x.y.Z | Z > 0)
+    * type: string
+    * optional
+* eolDate
+    * period of time for which the manufacturer or its represenant is commited to supply software and firmware updates.  Follows IETF RFC 3339
+    * format: date-fullyear [0-9][0-9][0-9][0-9]"-" date-month [0-9][0-9]"-" date-mday [0-9][0-9]
+    * type: string
+    * optional
 * capacity
     * capacity of rom
     * unit: Mb
