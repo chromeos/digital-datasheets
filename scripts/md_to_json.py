@@ -58,8 +58,9 @@ def main():
             continue
 
     # print(spec)
-    with open('spec.json', 'w') as outfile:
-        json.dump(spec, outfile, indent=4)
+    for block in spec.keys():
+        with open('part-spec/' + block.replace('/', '_').replace(' ', '_') + '.json', 'w') as outfile:
+            json.dump(spec[block], outfile, indent=4)
 
 
 
