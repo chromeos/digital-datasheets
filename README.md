@@ -1,4 +1,4 @@
-# Digital Datasheets Properties
+# Digital Datasheet Properties
 
 This repository contains information about the format and properties
 of digital datasheets for a variety of component types.
