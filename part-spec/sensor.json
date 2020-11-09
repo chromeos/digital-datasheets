@@ -1,0 +1,211 @@
+[
+    {
+        "title": "level shifter",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "numberChannels": {
+                "description": "number of lanes (single ended or differential) supported by redriver",
+                "type": "numeric"
+            },
+            "interface": {
+                "description": "interface supported by redriver",
+                "examples": [
+                    "hdmi1.4",
+                    "hdmi2.0",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "inputVoltage": {
+                "description": "input voltage level of level shifter",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "outputVoltage": {
+                "description": "output voltage level of level shifter",
+                "comment": "units of volts",
+                "type": "numeric"
+            }
+        }
+    },
+    {
+        "title": "accelerometer",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "accelerationRanges": {
+                "description": "range of force that accelerometer can measure",
+                "examples": [
+                    "[2",
+                    "4",
+                    "8",
+                    "16]"
+                ],
+                "comment": "units of g",
+                "type": "numeric"
+            },
+            "sensitivity": {
+                "description": "smallest change in force accelerometer is able to capture (typical). Corresponds to levels in acceleration ranges",
+                "examples": [
+                    "[16000",
+                    "8000",
+                    "4000",
+                    "2000]"
+                ],
+                "comment": "units of LSB/g",
+                "type": "numeric"
+            },
+            "axis": {
+                "description": "number of axes of acceleration measurement",
+                "type": "numeric"
+            },
+            "interface": {
+                "description": "interface(s) for communication to host",
+                "examples": [
+                    "[i2c",
+                    "spi",
+                    "analog]"
+                ],
+                "type": "string"
+            },
+            "bandwidth": {
+                "description": "bandwidth of acceleration measurement",
+                "comment": "units of Hz",
+                "type": "numeric"
+            }
+        }
+    },
+    {
+        "title": "accelerometer/gyro",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "accelerationRanges": {
+                "description": "range of force that accelerometer can measure",
+                "examples": [
+                    "[2",
+                    "4",
+                    "8",
+                    "16]"
+                ],
+                "comment": "units of g",
+                "type": "numeric"
+            },
+            "accelerationSensitivity": {
+                "description": "smallest change in force accelerometer is able to capture (typical). Corresponds to levels in acceleration ranges",
+                "examples": [
+                    "[16000",
+                    "8000",
+                    "4000",
+                    "2000]"
+                ],
+                "comment": "units of LSB/g",
+                "type": "numeric"
+            },
+            "gyroRanges": {
+                "description": "range of angular speed that gyro can measure",
+                "examples": [
+                    "[125",
+                    "250",
+                    "500]"
+                ],
+                "comment": "units of degrees-per-second (dps)",
+                "type": "numeric"
+            },
+            "gyroSensitivity": {
+                "description": "smallest change in angular speed gyro is able to capture (typical). Corresponds to levels in gyro ranges",
+                "examples": [
+                    "[16",
+                    "32",
+                    "65]"
+                ],
+                "comment": "units of LSB/dps",
+                "type": "numeric"
+            },
+            "axis": {
+                "description": "number of axes of measurement",
+                "type": "numeric"
+            },
+            "interface": {
+                "description": "interface(s) for communication to host",
+                "examples": [
+                    "[i2c",
+                    "spi",
+                    "analog]"
+                ],
+                "type": "string"
+            }
+        }
+    },
+    {
+        "title": "magnetic sensor",
+        "type": "object",
+        "required": [
+            "type",
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "type": {
+                "description": "method by which magnetism is detected",
+                "examples": [
+                    "gmr",
+                    "hall effect"
+                ],
+                "type": "string"
+            },
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "trip": {
+                "description": "magnetic threshold causing the sensor to output high",
+                "comment": "units of mT",
+                "type": "numeric"
+            },
+            "release": {
+                "description": "magnetic threshold causing the sensor to output low",
+                "comment": "units of mT",
+                "type": "numeric"
+            }
+        }
+    }
+]

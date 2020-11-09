@@ -1,0 +1,30 @@
+[
+    {
+        "title": "tpm",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "interface": {
+                "description": "describes the communication interface from the chip to the host",
+                "examples": [
+                    "spi",
+                    "i2c",
+                    "lpc",
+                    ""
+                ],
+                "type": "string"
+            }
+        }
+    }
+]

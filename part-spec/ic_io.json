@@ -1,0 +1,492 @@
+[
+    {
+        "title": "microcontroller/ec/asic",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "onChipFlash": {
+                "description": "quantity of built-in flash in a microprocessor",
+                "comment": "units of KB",
+                "type": "numeric"
+            },
+            "onChipRAM": {
+                "description": "quantity of built-in RAM in a microprocessor",
+                "comment": "units of KB",
+                "type": "numeric"
+            },
+            "interfaces": {
+                "description": "list of supported interfaces in a microprocessor",
+                "examples": [
+                    "[i2c",
+                    "spi",
+                    "uart",
+                    "espi",
+                    "etc.]"
+                ],
+                "type": "string"
+            },
+            "coreProcessor": {
+                "description": "description of core processor",
+                "examples": [
+                    "32-bit ARM Cortex-M4"
+                ],
+                "type": "string"
+            }
+        }
+    },
+    {
+        "title": "usb-c port controller",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "pdVersion": {
+                "description": "version of power delivery spec implemented by controller",
+                "examples": [
+                    "pd2",
+                    "pd3"
+                ],
+                "type": "string"
+            },
+            "vconnPowerSupport": {
+                "description": "whether controller has support for vconn power",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "vconnPowerLimit": {
+                "description": "power limit supported by internal vconn switch (if supported)",
+                "comment": "units of watts",
+                "type": "numeric"
+            }
+        }
+    },
+    {
+        "title": "bc12",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "hostMode": {
+                "description": "whether host mode is supported by bc12 chip",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "deviceMode": {
+                "description": "whether device mode is supported by bc12 chip",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            }
+        }
+    },
+    {
+        "title": "pd power mux",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "fastRoleSwap": {
+                "description": "whether fast role swap is supported",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "ccIsolation": {
+                "description": "whether cc pins can be isolated through an internal switch",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "deadBatteryMode": {
+                "description": "whether dead battery mode is supported on cc pins",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "reverseCurrentBlocking": {
+                "description": "whether vbus power path supports reverse current blocking",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "ocp": {
+                "description": "over current protection limit provided on vbus power path",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "ovp": {
+                "description": "over voltage protection limit provided on vbus power path",
+                "comment": "units of volts",
+                "type": "numeric"
+            }
+        }
+    },
+    {
+        "title": "usb-c redriver/retimer",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "auxMux": {
+                "description": "whether chip supports internal muxing of aux pins",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "usbVersion": {
+                "description": "highest version of usb spec supported by redriver/retimer",
+                "examples": [
+                    "2.0",
+                    "3.1",
+                    "3.1 gen2",
+                    "4.0"
+                ],
+                "type": "string"
+            },
+            "dpVersion": {
+                "description": "highest version of dp spec supported by redriver/retimer",
+                "examples": [
+                    "hbr2",
+                    "hbr3"
+                ],
+                "type": "string"
+            },
+            "tbtVersion": {
+                "description": "highest version of thunderbolt spec supported by redriver/retimer",
+                "examples": [
+                    "2",
+                    "3",
+                    "4"
+                ],
+                "type": "string"
+            },
+            "pcieVersion": {
+                "description": "highest version of pcie spec supported by redriver/retimer",
+                "examples": [
+                    "gen2",
+                    "gen3"
+                ],
+                "type": "string"
+            }
+        }
+    },
+    {
+        "title": "usb-c mux",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "vconnPowerSupport": {
+                "description": "whether controller has support for vconn power",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "vconnPowerLimit": {
+                "description": "power limit supported by internal vconn switch (if supported)",
+                "comment": "units of watts",
+                "type": "numeric"
+            },
+            "redriving": {
+                "description": "whether a mux includes redriving support",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "auxMux": {
+                "description": "whether chip supports internal muxing of aux pins",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "usbVersion": {
+                "description": "highest version of usb spec supported by redriver/retimer",
+                "examples": [
+                    "2.0",
+                    "3.1",
+                    "3.1 gen2",
+                    "4.0"
+                ],
+                "type": "string"
+            },
+            "dpVersion": {
+                "description": "highest version of dp spec supported by redriver/retimer",
+                "examples": [
+                    "hbr2",
+                    "hbr3"
+                ],
+                "type": "string"
+            },
+            "tbtVersion": {
+                "description": "highest version of thunderbolt spec supported by redriver/retimer",
+                "examples": [
+                    "2",
+                    "3",
+                    "4"
+                ],
+                "type": "string"
+            },
+            "pcieVersion": {
+                "description": "highest version of pcie spec supported by redriver/retimer",
+                "examples": [
+                    "gen2",
+                    "gen3"
+                ],
+                "type": "string"
+            }
+        }
+    },
+    {
+        "title": "usb-c mux/port controller",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "pdVersion": {
+                "description": "version of power delivery spec implemented by controller",
+                "examples": [
+                    "pd2",
+                    "pd3"
+                ],
+                "type": "string"
+            },
+            "vconnPowerSupport": {
+                "description": "whether controller has support for vconn power",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "vconnPowerLimit": {
+                "description": "power limit supported by internal vconn switch (if supported)",
+                "comment": "units of watts",
+                "type": "numeric"
+            },
+            "redriving": {
+                "description": "whether a mux includes redriving support",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "auxMux": {
+                "description": "whether chip supports internal muxing of aux pins",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "usbVersion": {
+                "description": "highest version of usb spec supported by redriver/retimer",
+                "examples": [
+                    "2.0",
+                    "3.1",
+                    "3.1 gen2",
+                    "4.0"
+                ],
+                "type": "string"
+            },
+            "dpVersion": {
+                "description": "highest version of dp spec supported by redriver/retimer",
+                "examples": [
+                    "hbr2",
+                    "hbr3"
+                ],
+                "type": "string"
+            },
+            "tbtVersion": {
+                "description": "highest version of thunderbolt spec supported by redriver/retimer",
+                "examples": [
+                    "2",
+                    "3",
+                    "4"
+                ],
+                "type": "string"
+            },
+            "pcieVersion": {
+                "description": "highest version of pcie spec supported by redriver/retimer",
+                "examples": [
+                    "gen2",
+                    "gen3"
+                ],
+                "type": "string"
+            }
+        }
+    },
+    {
+        "title": "redriver",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "numberChannels": {
+                "description": "number of lanes (single ended or differential) supported by redriver",
+                "type": "numeric"
+            },
+            "interface": {
+                "description": "list of interface(s) supported by redriver",
+                "examples": [
+                    "[hdmi2",
+                    "dp hbr3",
+                    "usb3.1 gen2]"
+                ],
+                "type": "string"
+            },
+            "maxDataRate": {
+                "description": "maximum data rate supported by redriver",
+                "comment": "units of Hz",
+                "type": "numeric"
+            }
+        }
+    },
+    {
+        "title": "bridge chip",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "muxRatio": {
+                "description": "ratio of inputs to outputs",
+                "examples": [
+                    "2:1",
+                    "1:1",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "inputInterfaces": {
+                "description": "list of interfaces at the input of the bridge",
+                "examples": [
+                    "[hdmi2.0",
+                    "dp hbr2]"
+                ],
+                "type": "string"
+            },
+            "outputInterfaces": {
+                "description": "list of interfaces at the output of the bridge",
+                "examples": [
+                    "[dp hbr2]"
+                ],
+                "type": "string"
+            }
+        }
+    }
+]

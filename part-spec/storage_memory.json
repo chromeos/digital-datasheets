@@ -1,0 +1,162 @@
+[
+    {
+        "title": "thermal",
+        "type": "object",
+        "required": [
+            "type",
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "type": {
+                "description": "method by which temperature is detected",
+                "examples": [
+                    "rtd",
+                    "thermistor",
+                    "silicon bandgap"
+                ],
+                "type": "string"
+            },
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "interface": {
+                "description": "interface(s) for communication to host",
+                "examples": [
+                    "[i2c",
+                    "spi",
+                    "analog]"
+                ],
+                "type": "string"
+            },
+            "resolution": {
+                "description": "maximum resolution of temperature sensor",
+                "comment": "units of degreesC/LSD",
+                "type": "numeric"
+            }
+        }
+    },
+    {
+        "title": "ssd",
+        "type": "object",
+        "required": [
+            "type",
+            "manufacturer",
+            "mpn",
+            "capacity"
+        ],
+        "properties": {
+            "type": {
+                "description": "type of ssd storage as defined by interface and technology",
+                "examples": [
+                    "emmc",
+                    "sata",
+                    "nvme"
+                ],
+                "type": "string"
+            },
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "capacity": {
+                "description": "capacity of SSD",
+                "comment": "units of GB",
+                "type": "numeric"
+            },
+            "dataRate": {
+                "description": "maximum data rate",
+                "comment": "units of GB/sec",
+                "type": "numeric"
+            },
+            "interface": {
+                "description": "interface of ssd to host",
+                "examples": [
+                    "emmc 5.1",
+                    "pcie gen3",
+                    "etc."
+                ],
+                "type": "string"
+            }
+        }
+    },
+    {
+        "title": "sd card reader",
+        "type": "object",
+        "required": [
+            "type",
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "type": {
+                "description": "type of sd card reader",
+                "examples": [
+                    "micro",
+                    "full size"
+                ],
+                "type": "string"
+            },
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            }
+        }
+    },
+    {
+        "title": "dram",
+        "type": "object",
+        "required": [
+            "type",
+            "manufacturer",
+            "mpn",
+            "capacity"
+        ],
+        "properties": {
+            "type": {
+                "description": "type of dram",
+                "examples": [
+                    "lpddr3",
+                    "ddr3",
+                    "lpddr4",
+                    "lpddr4x",
+                    "ddr4",
+                    "lpddr5",
+                    "ddr5"
+                ],
+                "type": "string"
+            },
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "capacity": {
+                "description": "capacity of dram chip",
+                "comment": "units of Gb",
+                "type": "numeric"
+            },
+            "speed": {
+                "description": "dram maximum speed",
+                "comment": "units of Mbps",
+                "type": "numeric"
+            }
+        }
+    }
+]

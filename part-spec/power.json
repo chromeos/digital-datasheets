@@ -1,0 +1,464 @@
+[
+    {
+        "title": "diode",
+        "type": "object",
+        "required": [
+            "type",
+            "manufacturer",
+            "mpn",
+            "vfCondition",
+            "irCondition"
+        ],
+        "properties": {
+            "type": {
+                "description": "type of diode",
+                "examples": [
+                    "zener",
+                    "schottky",
+                    "esd"
+                ],
+                "type": "string"
+            },
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "vf": {
+                "description": "forward voltage of a diode",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "vfCondition": {
+                "description": "forward current of diode under which a given forward voltage was measured",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "ifm": {
+                "description": "maximum continuous forward current a diode can support",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "ifrm": {
+                "description": "maximum repetitive peak forward current a diode can support",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "ifsm": {
+                "description": "maximum non-repetitive surge forward current a diode can support",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "vbr": {
+                "description": "breakdown voltage of a diode",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "ir": {
+                "description": "reverse leakage current",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "irCondition": {
+                "description": "reverse bias voltage under which reverse leakage current occurs",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "vz": {
+                "description": "breakdown voltage of a zener diode",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "vzCondition": {
+                "description": "minimum reverse current condition under which breakdown voltage of a zener diode is achieved",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "vrm": {
+                "description": "reverse standoff voltage of a tvs diode",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "vcl": {
+                "description": "clamping voltage of a tvs diode",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "vclCondition": {
+                "description": "surge current condition under which a tvs clamping voltage occurs",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "esdProtection": {
+                "description": "whether a diode has built in esd protection",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            }
+        }
+    },
+    {
+        "title": "ldo",
+        "type": "object",
+        "required": [
+            "type",
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "type": {
+                "description": "ldo type",
+                "examples": [
+                    "fixed",
+                    "adjustable"
+                ],
+                "type": "string"
+            },
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "vinMin": {
+                "description": "minimum input voltage under which the part can be expected to operate properly",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "vinMax": {
+                "description": "maximum input voltage under which the part can be expected to operate properly",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "dropoutVoltage": {
+                "description": "nominal dropout voltage for ldo",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "ilim": {
+                "description": "maximum sustained current output current under which the part will operate properly",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "turnOnTime": {
+                "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
+                "comment": "units of seconds",
+                "type": "numeric"
+            }
+        }
+    },
+    {
+        "title": "voltage regulator",
+        "type": "object",
+        "required": [
+            "type",
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "type": {
+                "description": "switching voltage regulator type",
+                "examples": [
+                    "buck",
+                    "boost",
+                    "buck-boost",
+                    "other"
+                ],
+                "type": "string"
+            },
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "vinMin": {
+                "description": "minimum input voltage under which the part can be expected to operate properly",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "vinMax": {
+                "description": "maximum input voltage under which the part can be expected to operate properly",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "voutMin": {
+                "description": "minimum output voltage part can regulate",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "voutMax": {
+                "description": "maximum output voltage part can regulate",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "fsw": {
+                "description": "swtiching frequency of voltage regulator",
+                "comment": "units of hertz",
+                "type": "numeric"
+            },
+            "ilim": {
+                "description": "maximum sustained current output current under which the part will operate properly",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "turnOnTime": {
+                "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
+                "comment": "units of seconds",
+                "type": "numeric"
+            },
+            "integratedFets": {
+                "description": "whether the regulator contains integrated switching mosfets",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            }
+        }
+    },
+    {
+        "title": "load switch",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "vinMin": {
+                "description": "minimum input voltage under which the part can be expected to operate properly",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "vinMax": {
+                "description": "maximum input voltage under which the part can be expected to operate properly",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "ilim": {
+                "description": "maximum sustained current output current under which the part will operate properly",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "turnOnTimeNominal": {
+                "description": "nominal time for output voltage to go from 10% vout nominal to 90% vout nominal for fixed turn-on time part",
+                "comment": "units of seconds",
+                "type": "numeric"
+            },
+            "turnOnTimeMin": {
+                "description": "minimum time for output voltage to go from 10% vout nominal to 90% vout nominal for variable turn-on time part",
+                "comment": "units of seconds",
+                "type": "numeric"
+            },
+            "turnOnTimeMax": {
+                "description": "minimum time for output voltage to go from 10% vout nominal to 90% vout nominal for variable turn-on time part",
+                "comment": "units of seconds",
+                "type": "numeric"
+            },
+            "reverseCurrentBlocking": {
+                "description": "whether load switch has capability to block current flow from vout to vin",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "onResistance": {
+                "description": "nominal DC resistance of load switch when enabled",
+                "type": "numeric"
+            }
+        }
+    },
+    {
+        "title": "battery charger",
+        "type": "object",
+        "required": [
+            "converterType",
+            "manufacturer",
+            "mpn",
+            "batteryConfig"
+        ],
+        "properties": {
+            "converterType": {
+                "description": "switching voltage regulator type",
+                "examples": [
+                    "buck",
+                    "boost",
+                    "buck-boost",
+                    "other"
+                ],
+                "type": "string"
+            },
+            "chargerTopology": {
+                "description": "type of battery charger topology (Narrow VDC vs Hybrid Power Boost)",
+                "examples": [
+                    "nvdc",
+                    "hpb"
+                ],
+                "type": "string"
+            },
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "batteryConfig": {
+                "description": "battery serial configurations supported by charger",
+                "examples": [
+                    "1S",
+                    "2S",
+                    "3S",
+                    "4S"
+                ],
+                "type": "string"
+            },
+            "vinMin": {
+                "description": "minimum input voltage under which the part can be expected to operate properly",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "vinMax": {
+                "description": "maximum input voltage under which the part can be expected to operate properly",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "voutMin": {
+                "description": "minimum output voltage part can regulate",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "voutMax": {
+                "description": "maximum output voltage part can regulate",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "fsw": {
+                "description": "swtiching frequency of voltage regulator",
+                "comment": "units of hertz",
+                "type": "numeric"
+            },
+            "ilim": {
+                "description": "maximum sustained current output current under which the part will operate properly",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "TCPCSupport": {
+                "description": "whether type-C port controller support is built in",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "BC12Support": {
+                "description": "whether bc 1.2 detection is built in",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "itegratedLoadSwitch": {
+                "description": "whether the charger contains integrated power path load switch(es)",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "integratedFets": {
+                "description": "whether the charger contains integrated switching mosfets",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            }
+        }
+    },
+    {
+        "title": "display backlight driver",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "vinMin": {
+                "description": "minimum input voltage under which the part can be expected to operate properly",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "vinMax": {
+                "description": "maximum input voltage under which the part can be expected to operate properly",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "voutMin": {
+                "description": "minimum output voltage part can regulate",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "voutMax": {
+                "description": "maximum output voltage part can regulate",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "fsw": {
+                "description": "swtiching frequency of voltage regulator",
+                "comment": "units of hertz",
+                "type": "numeric"
+            },
+            "ilim": {
+                "description": "maximum sustained current output current under which the part will operate properly",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "integratedFets": {
+                "description": "whether the charger contains integrated switching mosfets",
+                "examples": [
+                    "yes",
+                    "no"
+                ],
+                "type": "string"
+            },
+            "currentMatchingAccuracy": {
+                "description": "current matching between LED strings",
+                "comment": "units of percentage",
+                "type": "numeric"
+            },
+            "numberLEDStrings": {
+                "description": "maximum number of LED strings supported by display driver",
+                "type": "numeric"
+            }
+        }
+    }
+]

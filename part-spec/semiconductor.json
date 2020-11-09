@@ -1,0 +1,157 @@
+[
+    {
+        "title": "ferrite bead",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn",
+            "packageFormat"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "package": {
+                "description": "package size of ferrite bead",
+                "examples": [
+                    "0201",
+                    "2.0x1.0x0.5"
+                ],
+                "type": "string"
+            },
+            "packageFormat": {
+                "description": "format used for expressing package code",
+                "examples": [
+                    "metric",
+                    "imperial",
+                    "length(mm)xwidth(mm)xheight(mm)"
+                ],
+                "type": "string"
+            },
+            "dcr": {
+                "description": "dc resistance of ferrite bead",
+                "comment": "units of ohms",
+                "type": "numeric"
+            },
+            "irms": {
+                "description": "applied DC current that produces a ferrite bead temperature rise of 40 deg C",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "impedance100MHz": {
+                "description": "impedance of ferrite bead under standard testing conditions at 100MHz",
+                "comment": "units of ohms",
+                "type": "numeric"
+            },
+            "impedanceTolerance": {
+                "description": "variation of ferrite bead impedance expressed as +/- percentage",
+                "comment": "units of percentage",
+                "type": "numeric"
+            }
+        }
+    },
+    {
+        "title": "transistor",
+        "type": "object",
+        "required": [
+            "type",
+            "manufacturer",
+            "mpn",
+            "channel"
+        ],
+        "properties": {
+            "type": {
+                "description": "type of transistor",
+                "examples": [
+                    "mosfet",
+                    "bjt",
+                    "jfet",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "channel": {
+                "description": "doping of a transistor's channel - describes whether a transistor is n-type or p-type",
+                "examples": [
+                    "nType",
+                    "pType"
+                ],
+                "comment": "units of string"
+            },
+            "vgsMax": {
+                "description": "maximum gate to source voltage difference that can be continously applied to a mosfet",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "vdsMax": {
+                "description": "maximum drain to source voltage difference that can be continously applied to a mosfet",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "vgsThMax": {
+                "description": "maximum gate to source voltage difference required to produce a conducting path between drain and source",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "iDrain": {
+                "description": "maximum continous DC current that can flow through a mosfet channel",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "idPulsed": {
+                "description": "maximum pulsed DC current that can flow through a mosfet channel",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "rdson": {
+                "description": "drain source on resistance of a mosfet",
+                "comment": "units of ohms",
+                "type": "numeric"
+            },
+            "rdsonCondition": {
+                "description": "description of the gate-source voltage and drain current under which rdson is measured",
+                "examples": [
+                    "\"vgs = 2.5V",
+                    "id = 1A\""
+                ],
+                "type": "string"
+            },
+            "qg": {
+                "description": "total gate charge of a mosfet",
+                "comment": "units of nC",
+                "type": "numeric"
+            },
+            "qgd": {
+                "description": "gate to drain charge of a mosfet",
+                "comment": "units of nC",
+                "type": "numeric"
+            },
+            "qgs": {
+                "description": "gate to source charge of a mosfet",
+                "comment": "units of nC",
+                "type": "numeric"
+            },
+            "chargeCondition": {
+                "description": "description of the drain-source voltage and drain current under which gate charge is measured",
+                "examples": [
+                    "\"vds = 6V",
+                    "id = 1A\""
+                ],
+                "type": "string"
+            }
+        }
+    }
+]

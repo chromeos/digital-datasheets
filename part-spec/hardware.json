@@ -1,0 +1,159 @@
+[
+    {
+        "title": "PMIC",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "targetApplication": {
+                "description": "description of intended PMIC application (example: KBL SOC, LPDDR4 memory, etc.)",
+                "type": "string"
+            },
+            "numIntegratedFetOutput": {
+                "description": "number of switching DC-DC converters with integrated mosfets in PMIC",
+                "type": "numeric"
+            },
+            "numExternalFetOutput": {
+                "description": "number of switching DC-DC converters with external mosfets in PMIC",
+                "type": "numeric"
+            },
+            "numLDO": {
+                "description": "number of integrated LDOs in PMIC",
+                "type": "numeric"
+            },
+            "numLoadSwitch": {
+                "description": "number of integrated load switches in PMIC",
+                "type": "numeric"
+            },
+            "vinMin": {
+                "description": "minimum input voltage under which the part can be expected to operate properly",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "vinMax": {
+                "description": "maximum input voltage under which the part can be expected to operate properly",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "interface": {
+                "description": "communication interface to host device",
+                "examples": [
+                    "i2c",
+                    "spi",
+                    "enables",
+                    "etc."
+                ],
+                "type": "numeric"
+            }
+        }
+    },
+    {
+        "title": "switch",
+        "type": "object",
+        "required": [
+            "manufacturer",
+            "mpn"
+        ],
+        "properties": {
+            "manufacturer": {
+                "description": "company that manufacturers the part",
+                "type": "string"
+            },
+            "mpn": {
+                "description": "manufacturer part number",
+                "type": "string"
+            },
+            "type": {
+                "description": "property describing the way in which the switch is activated",
+                "examples": [
+                    "toggle",
+                    "slide",
+                    "rocker",
+                    "push-button",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "contactType": {
+                "description": "property describing the order in which switch contact is made and broken",
+                "examples": [
+                    "break-before-make",
+                    "make-before-break"
+                ],
+                "type": "string"
+            },
+            "circuitConfig": {
+                "description": "property describing the number of poles and throws in a switch",
+                "examples": [
+                    "SPST",
+                    "SPDT",
+                    "DPDT",
+                    "DPST"
+                ],
+                "type": "string"
+            },
+            "cycleRating": {
+                "description": "number of on/off cycles a mechanical switch can reliably sustain",
+                "type": "numeric"
+            },
+            "voltageRating": {
+                "description": "maximum DC voltage potential that can be applied across an open switch",
+                "comment": "units of volts",
+                "type": "numeric"
+            },
+            "currentRating": {
+                "description": "maximum DC current that can flow through a closed switch without causing excessive heating",
+                "comment": "units of amps",
+                "type": "numeric"
+            },
+            "onResistance": {
+                "description": "nominal resistance of a closed switch",
+                "comment": "units of ohms",
+                "type": "numeric"
+            },
+            "dielectricRating": {
+                "description": "maximum AC voltage potential that can be applied across an open switch for one minute",
+                "comment": "units of volts",
+                "type": "numeric"
+            }
+        }
+    },
+    {
+        "title": "test point",
+        "type": "object",
+        "required": [
+            "shape"
+        ],
+        "properties": {
+            "shape": {
+                "description": "shape of the test point",
+                "examples": [
+                    "circle",
+                    "square",
+                    "oval"
+                ],
+                "type": "string"
+            },
+            "length": {
+                "description": "shorter dimension of a rectangular or oval test point",
+                "comment": "units of mm",
+                "type": "numeric"
+            },
+            "diameter": {
+                "description": "diameter of a circular test point",
+                "comment": "units of mm",
+                "type": "numeric"
+            }
+        }
+    }
+]
