@@ -1,30 +1,148 @@
-[
-    {
-        "title": "tpm",
-        "type": "object",
-        "required": [
-            "manufacturer",
-            "mpn"
-        ],
-        "properties": {
-            "manufacturer": {
-                "description": "company that manufacturers the part",
-                "type": "string"
-            },
-            "mpn": {
-                "description": "manufacturer part number",
-                "type": "string"
-            },
-            "interface": {
-                "description": "describes the communication interface from the chip to the host",
-                "examples": [
-                    "spi",
-                    "i2c",
-                    "lpc",
-                    ""
-                ],
-                "type": "string"
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic micro.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ic micro",
+    "oneOf": [
+        {
+            "title": "tpm",
+            "type": "object",
+            "required": [
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "interface": {
+                    "description": "describes the communication interface from the chip to the host",
+                    "examples": [
+                        "spi",
+                        "i2c",
+                        "lpc",
+                        ""
+                    ],
+                    "type": "string"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "microcontroller/ec/asic",
+            "type": "object",
+            "required": [
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "onChipFlash": {
+                    "description": "quantity of built-in flash in a microprocessor",
+                    "comment": "units of KB",
+                    "type": "number"
+                },
+                "onChipRAM": {
+                    "description": "quantity of built-in RAM in a microprocessor",
+                    "comment": "units of KB",
+                    "type": "number"
+                },
+                "interfaces": {
+                    "description": "list of supported interfaces in a microprocessor",
+                    "examples": [
+                        "[i2c",
+                        "spi",
+                        "uart",
+                        "espi",
+                        "etc.]"
+                    ],
+                    "type": "string"
+                },
+                "coreProcessor": {
+                    "description": "description of core processor",
+                    "examples": [
+                        "32-bit ARM Cortex-M4"
+                    ],
+                    "type": "string"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
             }
         }
-    }
-]
+    ]
+}

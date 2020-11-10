@@ -1,186 +1,354 @@
-[
-    {
-        "title": "connector",
-        "type": "object",
-        "required": [
-            "manufacturer",
-            "mpn"
-        ],
-        "properties": {
-            "manufacturer": {
-                "description": "company that manufacturers the part",
-                "type": "string"
-            },
-            "mpn": {
-                "description": "manufacturer part number",
-                "type": "string"
-            },
-            "function": {
-                "description": "intended function of a connector",
-                "examples": [
-                    "headphone jack",
-                    "USB-C",
-                    "HDMI",
-                    "etc."
-                ],
-                "type": "string"
-            },
-            "contactCount": {
-                "description": "number of contacts in a connector",
-                "type": "numeric"
-            },
-            "type": {
-                "description": "property describing the method of mating to the connector",
-                "examples": [
-                    "plug",
-                    "receptacle",
-                    "header",
-                    "jumper",
-                    "etc."
-                ],
-                "type": "string"
-            },
-            "cycleRating": {
-                "description": "number of plug/unplug cycles a connector is rated to support",
-                "type": "numeric"
-            },
-            "zHeight": {
-                "description": "maximum height of a mounted connector from the PCB surface",
-                "comment": "units of mm",
-                "type": "numeric"
-            },
-            "pitch": {
-                "description": "distance from the center of one contact on the connector to the center of the next contact",
-                "comment": "units of mm",
-                "type": "numeric"
-            },
-            "keying": {
-                "description": "property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction",
-                "examples": [
-                    "yes",
-                    "no"
-                ],
-                "type": "string"
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic logic.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ic logic",
+    "oneOf": [
+        {
+            "title": "connector",
+            "type": "object",
+            "required": [
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "function": {
+                    "description": "intended function of a connector",
+                    "examples": [
+                        "headphone jack",
+                        "USB-C",
+                        "HDMI",
+                        "etc."
+                    ],
+                    "type": "string"
+                },
+                "contactCount": {
+                    "description": "number of contacts in a connector",
+                    "type": "number"
+                },
+                "type": {
+                    "description": "property describing the method of mating to the connector",
+                    "examples": [
+                        "plug",
+                        "receptacle",
+                        "header",
+                        "jumper",
+                        "etc."
+                    ],
+                    "type": "string"
+                },
+                "cycleRating": {
+                    "description": "number of plug/unplug cycles a connector is rated to support",
+                    "type": "number"
+                },
+                "zHeight": {
+                    "description": "maximum height of a mounted connector from the PCB surface",
+                    "comment": "units of mm",
+                    "type": "number"
+                },
+                "pitch": {
+                    "description": "distance from the center of one contact on the connector to the center of the next contact",
+                    "comment": "units of mm",
+                    "type": "number"
+                },
+                "keying": {
+                    "description": "property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction",
+                    "examples": [
+                        "yes",
+                        "no"
+                    ],
+                    "type": "string"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "logic gate",
+            "type": "object",
+            "required": [
+                "manufacturer",
+                "mpn",
+                "datasheetVersion",
+                "type"
+            ],
+            "properties": {
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "type": {
+                    "description": "logical operation performed by logic gate",
+                    "examples": [
+                        "and",
+                        "or",
+                        "nor",
+                        "nand",
+                        "inverter",
+                        "buffer",
+                        "configurable"
+                    ],
+                    "type": "string"
+                },
+                "numberGates": {
+                    "description": "number of logical gates encapsulated in logic IC",
+                    "type": "number"
+                },
+                "schmittTrigger": {
+                    "description": "property describing whether logic gate has schmitt trigger inputs",
+                    "examples": [
+                        "yes",
+                        "no"
+                    ],
+                    "type": "string"
+                },
+                "propagationDelay": {
+                    "description": "time between input changing to output changing",
+                    "comment": "units of seconds",
+                    "type": "number"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "clock",
+            "type": "object",
+            "required": [
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "fixedFrequency": {
+                    "description": "clock frequency value if the clock has a fixed frequency",
+                    "comment": "units of Hz",
+                    "type": "number"
+                },
+                "minFrequency": {
+                    "description": "minimum clock frequency value if the clock has a configurable frequency",
+                    "comment": "units of Hz",
+                    "type": "number"
+                },
+                "maxFrequency": {
+                    "description": "maximum clock frequency value if the clock has a configurable frequency",
+                    "comment": "units of Hz",
+                    "type": "number"
+                },
+                "numberClockOutputs": {
+                    "description": "number of clock outputs in a clock IC",
+                    "type": "number"
+                },
+                "diffSingleEnded": {
+                    "description": "property describing whether a clock output is single ended or differential",
+                    "examples": [
+                        "diff",
+                        "single"
+                    ],
+                    "type": "string"
+                },
+                "jitter": {
+                    "description": "cycle to cycle clock jitter",
+                    "comment": "units of seconds",
+                    "type": "number"
+                },
+                "frequencyTolerance": {
+                    "description": "amount of frequency variation specced from nominal frequency",
+                    "comment": "units of percentage",
+                    "type": "number"
+                },
+                "psrr": {
+                    "description": "power supply rejection ratio or ratio between power supply variation and output variation",
+                    "comment": "units of dB",
+                    "type": "number"
+                },
+                "outputFormat": {
+                    "description": "signal format of clock output",
+                    "examples": [
+                        "lvpecl",
+                        "lvds",
+                        "hcsl",
+                        "etc."
+                    ],
+                    "type": "string"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "power sequencing",
+            "type": "object",
+            "required": [
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "targetApplication": {
+                    "description": "description of intended power sequencing chip application (example: KBL SOC, LPDDR4 memory, etc.)",
+                    "type": "string"
+                },
+                "fixedConfigurable": {
+                    "description": "description of whether a power sequencing IC has fixed or configurable logic",
+                    "examples": [
+                        "fixed",
+                        "configurable"
+                    ],
+                    "type": "string"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
             }
         }
-    },
-    {
-        "title": "logic gate",
-        "type": "object",
-        "required": [
-            "manufacturer",
-            "mpn",
-            "type"
-        ],
-        "properties": {
-            "manufacturer": {
-                "description": "company that manufacturers the part",
-                "type": "string"
-            },
-            "mpn": {
-                "description": "manufacturer part number",
-                "type": "string"
-            },
-            "type": {
-                "description": "logical operation performed by logic gate",
-                "examples": [
-                    "and",
-                    "or",
-                    "nor",
-                    "nand",
-                    "inverter",
-                    "buffer",
-                    "configurable"
-                ],
-                "type": "string"
-            },
-            "numberGates": {
-                "description": "number of logical gates encapsulated in logic IC",
-                "type": "numeric"
-            },
-            "schmittTrigger": {
-                "description": "property describing whether logic gate has schmitt trigger inputs",
-                "examples": [
-                    "yes",
-                    "no"
-                ],
-                "type": "string"
-            },
-            "propagationDelay": {
-                "description": "time between input changing to output changing",
-                "comment": "units of seconds",
-                "type": "numeric"
-            }
-        }
-    },
-    {
-        "title": "clock",
-        "type": "object",
-        "required": [
-            "manufacturer",
-            "mpn"
-        ],
-        "properties": {
-            "manufacturer": {
-                "description": "company that manufacturers the part",
-                "type": "string"
-            },
-            "mpn": {
-                "description": "manufacturer part number",
-                "type": "string"
-            },
-            "fixedFrequency": {
-                "description": "clock frequency value if the clock has a fixed frequency",
-                "comment": "units of Hz",
-                "type": "numeric"
-            },
-            "minFrequency": {
-                "description": "minimum clock frequency value if the clock has a configurable frequency",
-                "comment": "units of Hz",
-                "type": "numeric"
-            },
-            "maxFrequency": {
-                "description": "maximum clock frequency value if the clock has a configurable frequency",
-                "comment": "units of Hz",
-                "type": "numeric"
-            },
-            "numberClockOutputs": {
-                "description": "number of clock outputs in a clock IC",
-                "type": "numeric"
-            },
-            "diffSingleEnded": {
-                "description": "property describing whether a clock output is single ended or differential",
-                "examples": [
-                    "diff",
-                    "single"
-                ],
-                "type": "string"
-            },
-            "jitter": {
-                "description": "cycle to cycle clock jitter",
-                "comment": "units of seconds",
-                "type": "numeric"
-            },
-            "frequencyTolerance": {
-                "description": "amount of frequency variation specced from nominal frequency",
-                "comment": "units of percentage",
-                "type": "numeric"
-            },
-            "psrr": {
-                "description": "power supply rejection ratio or ratio between power supply variation and output variation",
-                "comment": "units of dB",
-                "type": "numeric"
-            },
-            "outputFormat": {
-                "description": "signal format of clock output",
-                "examples": [
-                    "lvpecl",
-                    "lvds",
-                    "hcsl",
-                    "etc."
-                ],
-                "type": "string"
-            }
-        }
-    }
-]
+    ]
+}

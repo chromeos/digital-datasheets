@@ -1,159 +1,372 @@
-[
-    {
-        "title": "PMIC",
-        "type": "object",
-        "required": [
-            "manufacturer",
-            "mpn"
-        ],
-        "properties": {
-            "manufacturer": {
-                "description": "company that manufacturers the part",
-                "type": "string"
-            },
-            "mpn": {
-                "description": "manufacturer part number",
-                "type": "string"
-            },
-            "targetApplication": {
-                "description": "description of intended PMIC application (example: KBL SOC, LPDDR4 memory, etc.)",
-                "type": "string"
-            },
-            "numIntegratedFetOutput": {
-                "description": "number of switching DC-DC converters with integrated mosfets in PMIC",
-                "type": "numeric"
-            },
-            "numExternalFetOutput": {
-                "description": "number of switching DC-DC converters with external mosfets in PMIC",
-                "type": "numeric"
-            },
-            "numLDO": {
-                "description": "number of integrated LDOs in PMIC",
-                "type": "numeric"
-            },
-            "numLoadSwitch": {
-                "description": "number of integrated load switches in PMIC",
-                "type": "numeric"
-            },
-            "vinMin": {
-                "description": "minimum input voltage under which the part can be expected to operate properly",
-                "comment": "units of volts",
-                "type": "numeric"
-            },
-            "vinMax": {
-                "description": "maximum input voltage under which the part can be expected to operate properly",
-                "comment": "units of volts",
-                "type": "numeric"
-            },
-            "interface": {
-                "description": "communication interface to host device",
-                "examples": [
-                    "i2c",
-                    "spi",
-                    "enables",
-                    "etc."
-                ],
-                "type": "numeric"
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/hardware.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "hardware",
+    "oneOf": [
+        {
+            "title": "PMIC",
+            "type": "object",
+            "required": [
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "targetApplication": {
+                    "description": "description of intended PMIC application (example: KBL SOC, LPDDR4 memory, etc.)",
+                    "type": "string"
+                },
+                "numIntegratedFetOutput": {
+                    "description": "number of switching DC-DC converters with integrated mosfets in PMIC",
+                    "type": "number"
+                },
+                "numExternalFetOutput": {
+                    "description": "number of switching DC-DC converters with external mosfets in PMIC",
+                    "type": "number"
+                },
+                "numLDO": {
+                    "description": "number of integrated LDOs in PMIC",
+                    "type": "number"
+                },
+                "numLoadSwitch": {
+                    "description": "number of integrated load switches in PMIC",
+                    "type": "number"
+                },
+                "vinMin": {
+                    "description": "minimum input voltage under which the part can be expected to operate properly",
+                    "comment": "units of volts",
+                    "type": "number"
+                },
+                "vinMax": {
+                    "description": "maximum input voltage under which the part can be expected to operate properly",
+                    "comment": "units of volts",
+                    "type": "number"
+                },
+                "interface": {
+                    "description": "communication interface to host device",
+                    "examples": [
+                        "i2c",
+                        "spi",
+                        "enables",
+                        "etc."
+                    ],
+                    "type": "number"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "switch",
+            "type": "object",
+            "required": [
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "type": {
+                    "description": "property describing the way in which the switch is activated",
+                    "examples": [
+                        "toggle",
+                        "slide",
+                        "rocker",
+                        "push-button",
+                        "etc."
+                    ],
+                    "type": "string"
+                },
+                "contactType": {
+                    "description": "property describing the order in which switch contact is made and broken",
+                    "examples": [
+                        "break-before-make",
+                        "make-before-break"
+                    ],
+                    "type": "string"
+                },
+                "circuitConfig": {
+                    "description": "property describing the number of poles and throws in a switch",
+                    "examples": [
+                        "SPST",
+                        "SPDT",
+                        "DPDT",
+                        "DPST"
+                    ],
+                    "type": "string"
+                },
+                "cycleRating": {
+                    "description": "number of on/off cycles a mechanical switch can reliably sustain",
+                    "type": "number"
+                },
+                "voltageRating": {
+                    "description": "maximum DC voltage potential that can be applied across an open switch",
+                    "comment": "units of volts",
+                    "type": "number"
+                },
+                "currentRating": {
+                    "description": "maximum DC current that can flow through a closed switch without causing excessive heating",
+                    "comment": "units of amps",
+                    "type": "number"
+                },
+                "onResistance": {
+                    "description": "nominal resistance of a closed switch",
+                    "comment": "units of ohms",
+                    "type": "number"
+                },
+                "dielectricRating": {
+                    "description": "maximum AC voltage potential that can be applied across an open switch for one minute",
+                    "comment": "units of volts",
+                    "type": "number"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "test point",
+            "type": "object",
+            "required": [
+                "manufacturer",
+                "mpn",
+                "datasheetVersion",
+                "shape"
+            ],
+            "properties": {
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "shape": {
+                    "description": "shape of the test point",
+                    "examples": [
+                        "circle",
+                        "square",
+                        "oval"
+                    ],
+                    "type": "string"
+                },
+                "length": {
+                    "description": "shorter dimension of a rectangular or oval test point",
+                    "comment": "units of mm",
+                    "type": "number"
+                },
+                "diameter": {
+                    "description": "diameter of a circular test point",
+                    "comment": "units of mm",
+                    "type": "number"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "connector",
+            "type": "object",
+            "required": [
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "function": {
+                    "description": "intended function of a connector",
+                    "examples": [
+                        "headphone jack",
+                        "USB-C",
+                        "HDMI",
+                        "etc."
+                    ],
+                    "type": "string"
+                },
+                "contactCount": {
+                    "description": "number of contacts in a connector",
+                    "type": "number"
+                },
+                "type": {
+                    "description": "property describing the method of mating to the connector",
+                    "examples": [
+                        "plug",
+                        "receptacle",
+                        "header",
+                        "jumper",
+                        "etc."
+                    ],
+                    "type": "string"
+                },
+                "cycleRating": {
+                    "description": "number of plug/unplug cycles a connector is rated to support",
+                    "type": "number"
+                },
+                "zHeight": {
+                    "description": "maximum height of a mounted connector from the PCB surface",
+                    "comment": "units of mm",
+                    "type": "number"
+                },
+                "pitch": {
+                    "description": "distance from the center of one contact on the connector to the center of the next contact",
+                    "comment": "units of mm",
+                    "type": "number"
+                },
+                "keying": {
+                    "description": "property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction",
+                    "examples": [
+                        "yes",
+                        "no"
+                    ],
+                    "type": "string"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
             }
         }
-    },
-    {
-        "title": "switch",
-        "type": "object",
-        "required": [
-            "manufacturer",
-            "mpn"
-        ],
-        "properties": {
-            "manufacturer": {
-                "description": "company that manufacturers the part",
-                "type": "string"
-            },
-            "mpn": {
-                "description": "manufacturer part number",
-                "type": "string"
-            },
-            "type": {
-                "description": "property describing the way in which the switch is activated",
-                "examples": [
-                    "toggle",
-                    "slide",
-                    "rocker",
-                    "push-button",
-                    "etc."
-                ],
-                "type": "string"
-            },
-            "contactType": {
-                "description": "property describing the order in which switch contact is made and broken",
-                "examples": [
-                    "break-before-make",
-                    "make-before-break"
-                ],
-                "type": "string"
-            },
-            "circuitConfig": {
-                "description": "property describing the number of poles and throws in a switch",
-                "examples": [
-                    "SPST",
-                    "SPDT",
-                    "DPDT",
-                    "DPST"
-                ],
-                "type": "string"
-            },
-            "cycleRating": {
-                "description": "number of on/off cycles a mechanical switch can reliably sustain",
-                "type": "numeric"
-            },
-            "voltageRating": {
-                "description": "maximum DC voltage potential that can be applied across an open switch",
-                "comment": "units of volts",
-                "type": "numeric"
-            },
-            "currentRating": {
-                "description": "maximum DC current that can flow through a closed switch without causing excessive heating",
-                "comment": "units of amps",
-                "type": "numeric"
-            },
-            "onResistance": {
-                "description": "nominal resistance of a closed switch",
-                "comment": "units of ohms",
-                "type": "numeric"
-            },
-            "dielectricRating": {
-                "description": "maximum AC voltage potential that can be applied across an open switch for one minute",
-                "comment": "units of volts",
-                "type": "numeric"
-            }
-        }
-    },
-    {
-        "title": "test point",
-        "type": "object",
-        "required": [
-            "shape"
-        ],
-        "properties": {
-            "shape": {
-                "description": "shape of the test point",
-                "examples": [
-                    "circle",
-                    "square",
-                    "oval"
-                ],
-                "type": "string"
-            },
-            "length": {
-                "description": "shorter dimension of a rectangular or oval test point",
-                "comment": "units of mm",
-                "type": "numeric"
-            },
-            "diameter": {
-                "description": "diameter of a circular test point",
-                "comment": "units of mm",
-                "type": "numeric"
-            }
-        }
-    }
-]
+    ]
+}
