@@ -45,8 +45,7 @@
                         "imperial",
                         "length(mm)xwidth(mm)xheight(mm)"
                     ],
-                    "type": "string",
-                    "conditionallyRequired": true
+                    "type": "string"
                 },
                 "dcr": {
                     "description": "dc resistance of ferrite bead",
@@ -91,6 +90,9 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
+            },
+            "dependencies": {
+                "packageFormat": ["package"]
             }
         },
         {
@@ -269,8 +271,7 @@
                 "vfCondition": {
                     "description": "forward current of diode under which a given forward voltage was measured",
                     "comment": "units of amps",
-                    "type": "number",
-                    "conditionallyRequired": true
+                    "type": "number"
                 },
                 "ifm": {
                     "description": "maximum continuous forward current a diode can support",
@@ -300,8 +301,7 @@
                 "irCondition": {
                     "description": "reverse bias voltage under which reverse leakage current occurs",
                     "comment": "units of volts",
-                    "type": "number",
-                    "conditionallyRequired": true
+                    "type": "number"
                 },
                 "vz": {
                     "description": "breakdown voltage of a zener diode",
@@ -359,6 +359,10 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
+            },
+            "dependencies": {
+                "vfCondition": ["vf"],
+                "irCondition": ["ir"]
             }
         }
     ]

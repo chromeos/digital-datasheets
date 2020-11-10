@@ -57,8 +57,7 @@
                         "imperial",
                         "length(mm)xwidth(mm)xheight(mm)"
                     ],
-                    "type": "string",
-                    "conditionallyRequired": true
+                    "type": "string"
                 },
                 "value": {
                     "description": "resistance value expressed as a float",
@@ -93,6 +92,9 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
+            },
+            "dependencies": {
+                "packageFormat": ["package"]
             }
         },
         {
@@ -138,8 +140,7 @@
                         "imperial",
                         "length(mm)xwidth(mm)xheight(mm)"
                     ],
-                    "type": "string",
-                    "conditionallyRequired": true
+                    "type": "string"
                 },
                 "value": {
                     "description": "capacitance value",
@@ -222,6 +223,9 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
+            },
+            "dependencies": {
+                "packageFormat": ["package"]
             }
         },
         {
@@ -266,8 +270,7 @@
                         "imperial",
                         "length(mm)xwidth(mm)xheight(mm)"
                     ],
-                    "type": "string",
-                    "conditionallyRequired": true
+                    "type": "string"
                 },
                 "value": {
                     "description": "inductance value",
@@ -330,6 +333,9 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
+            },
+            "dependencies": {
+                "packageFormat": ["package"]
             }
         },
         {
@@ -373,8 +379,7 @@
                         "imperial",
                         "length(mm)xwidth(mm)xheight(mm)"
                     ],
-                    "type": "string",
-                    "conditionallyRequired": true
+                    "type": "string"
                 },
                 "diffModeCutoff": {
                     "description": "frequency at which the differential mode attenuation equals -3dB",
@@ -431,6 +436,9 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
+            },
+            "dependencies": {
+                "packageFormat": ["package"]
             }
         },
         {
@@ -474,8 +482,7 @@
                         "imperial",
                         "length(mm)xwidth(mm)xheight(mm)"
                     ],
-                    "type": "string",
-                    "conditionallyRequired": true
+                    "type": "string"
                 },
                 "dcr": {
                     "description": "dc resistance of ferrite bead",
@@ -520,6 +527,9 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
+            },
+            "dependencies": {
+                "packageFormat": ["package"]
             }
         }
     ]
