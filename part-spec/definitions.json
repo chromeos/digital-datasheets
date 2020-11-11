@@ -1,0 +1,176 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/definitions.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "pinSpec": {
+            "type": "object",
+            "required": ["number", "name"],
+            "properties": {
+                "number": {
+                    "description": "pin or ball number as defined by datasheet",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "name of pin as defined by datasheet",
+                    "type": "string"
+                },
+                "functions" : {
+                    "description": "list of functions an individual pin can have",
+                    "comment": "should map 1:1 with directions",
+                    "examples": [
+                        "i2c",
+                        "spi",
+                        "gpio"
+                    ],
+                    "type": "array",
+                    "items": {
+                    "type": "string"
+                    }
+                },
+                "directions" : {
+                    "description": "list of directions an individual pin can have",
+                    "comment": "should map 1:1 with functions",
+                    "examples": [
+                        "in (input)",
+                        "out (output, push-pull)",
+                        "od (output, open-drain)",
+                        "iod (input or output, open-drain)",
+                        "inout (input or output, push-pull)",
+                        "analog",
+                        "power",
+                        "ground"
+                    ],
+                    "type": "array",
+                    "items": {
+                    "type": "string"
+                    }
+                },
+                "polarity": {
+                    "description": "whether the active state of a pin is high or low",
+                    "type": "string",
+                    "enum": [
+                        "high",
+                        "low"
+                    ]
+                },
+                "vihMin": {
+                    "description": "minimum voltage at which an input is read as high",
+                    "comment": "units of volts",
+                    "type": "number"
+                },
+                "vilMax": {
+                    "description": "maximum voltage at which an input is read as low",
+                    "comment": "units of volts",
+                    "type": "number"
+                },
+                "vol": {
+                    "description": "voltage ouput low or minimum voltage of a high output",
+                    "comment": "units of volts",
+                    "type": "number"
+                },
+                "voh": {
+                    "description": "voltage ouput high or maximum voltage of a high output",
+                    "comment": "units of volts",
+                    "type": "number"
+                },
+                "vmax": {
+                    "description": "maximum continuous voltage that can safely be applied to a pin",
+                    "comment": "units of volts",
+                    "type": "number"
+                },
+                "imax": {
+                    "description": "maximum continuous current that can safely be drawn from a pin",
+                    "comment": "units of amps",
+                    "type": "number"
+                },
+                "inputLeakage": {
+                    "description": "maximum current draw into a high impedance input pin",
+                    "comment": "units of amps",
+                    "type": "number"
+                },
+                "dcResistance": {
+                    "description": "resistance of a pin of a connector",
+                    "comment": "units of ohms",
+                    "type": "number"
+                },
+                "voltageOptions": {
+                    "description": "list of voltage levels supported by a pin",
+                    "comment": "units of volts",
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "floatUnused": {
+                    "description": "description of whether pin can safely be floated if it is not used",
+                    "type": "string",
+                    "enum": [
+                        "yes",
+                        "no"
+                    ]
+                },
+                "externalComponents": {
+                    "description": "list of external component structures recommended to be attached to a pin",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/externalComponents"
+                    }
+                }
+            }
+        },
+        "externalComponents": {
+            "type": "object",
+            "required": ["type", "name"],
+            "properties": {
+                "type" : {
+                    "description": "type of component connected to a pin",
+                    "type": "string",
+                    "enum": [
+                        "resistor",
+                        "capacitor",
+                        "fet",
+                        "diode"
+                    ]
+                },
+                "configuration" : {
+                    "description": "electrical configuration of component connected to pin with respect to the pin",
+                    "examples": [
+                        "pu (pull up to power)",
+                        "pd (pull down to ground)",
+                        "series (in series)"
+                    ],
+                    "enum": [
+                        "pu",
+                        "pd",
+                        "series"
+                    ],
+                    "type": "string"
+                },
+                "minValue": {
+                    "description": "minimum value of component if a range is specified",
+                    "type": "number"
+                },
+                "maxValue": {
+                    "description": "maximum value of component if a range is specified",
+                    "type": "number"
+                },
+                "value": {
+                    "description": "value of component if a range is not specified",
+                    "type": "number"
+                },
+                "componentUnit": {
+                    "description": "unit of min/max value",
+                    "type": "string",
+                    "enum": [
+                        "ohms",
+                        "micro farads",
+                        "micro heneries"
+                    ]
+                },
+                "dependencies": {
+                    "componentUnit": ["minValue", "maxValue", "value"]
+                }
+            }
+        }
+    }
+}
