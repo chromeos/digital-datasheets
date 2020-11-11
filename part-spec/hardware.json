@@ -5,97 +5,6 @@
     "title": "hardware",
     "oneOf": [
         {
-            "title": "PMIC",
-            "type": "object",
-            "required": [
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
-            ],
-            "properties": {
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
-                },
-                "targetApplication": {
-                    "description": "description of intended PMIC application (example: KBL SOC, LPDDR4 memory, etc.)",
-                    "type": "string"
-                },
-                "numIntegratedFetOutput": {
-                    "description": "number of switching DC-DC converters with integrated mosfets in PMIC",
-                    "type": "number"
-                },
-                "numExternalFetOutput": {
-                    "description": "number of switching DC-DC converters with external mosfets in PMIC",
-                    "type": "number"
-                },
-                "numLDO": {
-                    "description": "number of integrated LDOs in PMIC",
-                    "type": "number"
-                },
-                "numLoadSwitch": {
-                    "description": "number of integrated load switches in PMIC",
-                    "type": "number"
-                },
-                "vinMin": {
-                    "description": "minimum input voltage under which the part can be expected to operate properly",
-                    "comment": "units of volts",
-                    "type": "number"
-                },
-                "vinMax": {
-                    "description": "maximum input voltage under which the part can be expected to operate properly",
-                    "comment": "units of volts",
-                    "type": "number"
-                },
-                "interface": {
-                    "description": "communication interface to host device",
-                    "examples": [
-                        "i2c",
-                        "spi",
-                        "enables",
-                        "etc."
-                    ],
-                    "type": "number"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "definitions.json#/pinSpec"
-                    }
-                }
-            }
-        },
-        {
             "title": "switch",
             "type": "object",
             "required": [
@@ -203,20 +112,10 @@
             "title": "test point",
             "type": "object",
             "required": [
-                "manufacturer",
-                "mpn",
                 "datasheetVersion",
                 "shape"
             ],
             "properties": {
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
                 "datasheetVersion": {
                     "description": "datasheet version encoded in this document",
                     "type": "string"
