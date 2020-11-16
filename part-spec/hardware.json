@@ -13,6 +13,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "switch"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -43,7 +50,7 @@
                 },
                 "contactType": {
                     "description": "property describing the order in which switch contact is made and broken",
-                    "examples": [
+                    "enum": [
                         "break-before-make",
                         "make-before-break"
                     ],
@@ -51,7 +58,7 @@
                 },
                 "circuitConfig": {
                     "description": "property describing the number of poles and throws in a switch",
-                    "examples": [
+                    "enum": [
                         "SPST",
                         "SPDT",
                         "DPDT",
@@ -85,80 +92,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "definitions.json#/pinSpec"
-                    }
-                }
-            }
-        },
-        {
-            "title": "test point",
-            "type": "object",
-            "required": [
-                "datasheetVersion",
-                "shape"
-            ],
-            "properties": {
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
-                },
-                "shape": {
-                    "description": "shape of the test point",
-                    "examples": [
-                        "circle",
-                        "square",
-                        "oval"
-                    ],
-                    "type": "string"
-                },
-                "length": {
-                    "description": "shorter dimension of a rectangular or oval test point",
-                    "comment": "units of mm",
-                    "type": "number"
-                },
-                "diameter": {
-                    "description": "diameter of a circular test point",
-                    "comment": "units of mm",
-                    "type": "number"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -178,6 +116,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "connector"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -236,27 +181,15 @@
                 },
                 "keying": {
                     "description": "property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

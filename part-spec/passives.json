@@ -15,6 +15,13 @@
                 "value"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "resistor"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -71,19 +78,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -108,6 +107,13 @@
                 "ratedVoltage"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "capacitor"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -179,11 +185,7 @@
                 },
                 "polarized": {
                     "description": "whether a capacitor is polarized",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "esr": {
                     "description": "equivalent series resistance of a capacitor",
@@ -202,19 +204,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -238,6 +232,13 @@
                 "value"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "inductor"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -312,19 +313,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -347,6 +340,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "commonModeChoke"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -415,19 +415,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -450,6 +442,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "ferriteBead"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -506,19 +505,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

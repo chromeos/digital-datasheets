@@ -15,6 +15,13 @@
                 "channel"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "transistor"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -44,7 +51,7 @@
                 },
                 "channel": {
                     "description": "doping of a transistor's channel - describes whether a transistor is n-type or p-type",
-                    "examples": [
+                    "enum": [
                         "nType",
                         "pType"
                     ],
@@ -113,19 +120,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -134,6 +133,9 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
+            },
+            "dependencies": {
+                "rdsCondition": ["rdson"]
             }
         },
         {
@@ -146,6 +148,13 @@
                 "type"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "diode"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -165,7 +174,7 @@
                 },
                 "type": {
                     "description": "type of diode",
-                    "examples": [
+                    "enum": [
                         "zener",
                         "schottky",
                         "esd"
@@ -239,27 +248,15 @@
                 },
                 "esdProtection": {
                     "description": "whether a diode has built in esd protection",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -271,7 +268,9 @@
             },
             "dependencies": {
                 "vfCondition": ["vf"],
-                "irCondition": ["ir"]
+                "irCondition": ["ir"],
+                "vzCondition": ["vz"],
+                "vclCondition": ["vcl"]
             }
         }
     ]

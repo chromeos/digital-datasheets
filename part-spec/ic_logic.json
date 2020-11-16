@@ -14,6 +14,13 @@
                 "type"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "logicGate"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -33,7 +40,7 @@
                 },
                 "type": {
                     "description": "logical operation performed by logic gate",
-                    "examples": [
+                    "enum": [
                         "and",
                         "or",
                         "nor",
@@ -50,11 +57,7 @@
                 },
                 "schmittTrigger": {
                     "description": "property describing whether logic gate has schmitt trigger inputs",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "propagationDelay": {
                     "description": "time between input changing to output changing",
@@ -63,19 +66,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -95,6 +90,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "clock"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -133,7 +135,7 @@
                 },
                 "diffSingleEnded": {
                     "description": "property describing whether a clock output is single ended or differential",
-                    "examples": [
+                    "enum": [
                         "diff",
                         "single"
                     ],
@@ -166,19 +168,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -198,6 +192,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "powerSequencing"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -221,35 +222,27 @@
                 },
                 "fixedConfigurable": {
                     "description": "description of whether a power sequencing IC has fixed or configurable logic",
-                    "examples": [
+                    "enum": [
                         "fixed",
                         "configurable"
                     ],
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
                     "type": "string"
                 },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

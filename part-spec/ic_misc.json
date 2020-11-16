@@ -13,6 +13,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "speakerAmplifier"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -89,19 +96,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -110,6 +109,11 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
+            },
+            "dependencies": {
+                "outputPowerConditions": ["outputPower"],
+                "efficiencyConditions": ["efficiency"],
+                "thd+nConditions": ["thd+n"]
             }
         },
         {
@@ -121,6 +125,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "audioCodec"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -164,11 +175,7 @@
                 },
                 "jackDetect": {
                     "description": "describes whether headphone jack detection is supported",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "interface": {
                     "description": "describes the communication interface from the chip to the host",
@@ -179,29 +186,21 @@
                     ],
                     "type": "string"
                 },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -221,6 +220,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "wlanModule"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -286,11 +292,7 @@
                 },
                 "lteCoexFilter": {
                     "description": "describes whether module supports lte coexistance filtering",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "interface": {
                     "description": "describes the communication interface from the chip to the host",
@@ -301,29 +303,21 @@
                     ],
                     "type": "string"
                 },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -343,6 +337,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "wwanModule"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -362,20 +363,16 @@
                 },
                 "networkSupport": {
                     "description": "networks supported by wwan module",
-                    "examples": [
-                        "[3G",
+                    "enum": [
+                        "3G",
                         "4G",
-                        "5G]"
+                        "5G"
                     ],
                     "type": "string"
                 },
                 "gpsSupport": {
                     "description": "whether wwan module has gps support",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "m2FormFactor": {
                     "description": "wlan module form factor described by jedec standard m.2 form factors",
@@ -401,29 +398,21 @@
                     ],
                     "type": "string"
                 },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -443,6 +432,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "tpm"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -462,29 +458,20 @@
                 },
                 "interface": {
                     "description": "describes the communication interface from the chip to the host",
-                    "examples": [
+                    "enum": [
                         "spi",
                         "i2c",
-                        "lpc",
-                        ""
+                        "lpc"
                     ],
                     "type": "string"
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

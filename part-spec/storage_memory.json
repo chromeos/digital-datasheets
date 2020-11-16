@@ -15,6 +15,13 @@
                 "capacity"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "ssd"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -34,7 +41,7 @@
                 },
                 "type": {
                     "description": "type of ssd storage as defined by interface and technology",
-                    "examples": [
+                    "enum": [
                         "emmc",
                         "sata",
                         "nvme"
@@ -60,29 +67,21 @@
                     ],
                     "type": "string"
                 },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -103,6 +102,13 @@
                 "type"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "sdCardReader"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -122,35 +128,28 @@
                 },
                 "type": {
                     "description": "type of sd card reader",
-                    "examples": [
+                    "enum": [
                         "micro",
+                        "mini",
                         "full size"
                     ],
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
                     "type": "string"
                 },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -172,6 +171,13 @@
                 "capacity"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "dram"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -191,7 +197,7 @@
                 },
                 "type": {
                     "description": "type of dram",
-                    "examples": [
+                    "enum": [
                         "lpddr3",
                         "ddr3",
                         "lpddr4",
@@ -212,29 +218,98 @@
                     "comment": "units of Mbps",
                     "type": "number"
                 },
+                "firmwareVersion": {
+                    "description": "firmware version of the part",
+                    "type": "string"
+                },
                 "softwareVersion": {
                     "description": "software version of the part",
                     "type": "string"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "boolean"
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "boolean"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "rom",
+            "type": "object",
+            "required": [
+                "manufacturer",
+                "mpn",
+                "datasheetVersion",
+                "capacity",
+                "interface"
+            ],
+            "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "rom"
+                    ]
+                },
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "capacity": {
+                    "description": "capacity of rom",
+                    "comment": "units of Mb",
+                    "type": "number"
+                },
+                "interface": {
+                    "description": "interace of rom to host",
+                    "type": "string",
+                    "enum": [
+                        "spi",
+                        "i2c"
+                    ]
+                },
+                "qeStatus": {
+                    "description": "indicates whether the QE bit is set",
+                    "type": "boolean"
                 },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

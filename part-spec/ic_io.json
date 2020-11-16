@@ -13,6 +13,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "usbCPortController"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -32,7 +39,7 @@
                 },
                 "pdVersion": {
                     "description": "version of power delivery spec implemented by controller",
-                    "examples": [
+                    "enum": [
                         "pd2",
                         "pd3"
                     ],
@@ -40,40 +47,28 @@
                 },
                 "vconnPowerSupport": {
                     "description": "whether controller has support for vconn power",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "vconnPowerLimit": {
                     "description": "power limit supported by internal vconn switch (if supported)",
                     "comment": "units of watts",
                     "type": "number"
                 },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -93,6 +88,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "bc12"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -112,35 +114,19 @@
                 },
                 "hostMode": {
                     "description": "whether host mode is supported by bc12 chip",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "deviceMode": {
                     "description": "whether device mode is supported by bc12 chip",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -160,6 +146,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "pdPowerMux"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -179,35 +172,19 @@
                 },
                 "fastRoleSwap": {
                     "description": "whether fast role swap is supported",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "ccIsolation": {
                     "description": "whether cc pins can be isolated through an internal switch",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "deadBatteryMode": {
                     "description": "whether dead battery mode is supported on cc pins",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "reverseCurrentBlocking": {
                     "description": "whether vbus power path supports reverse current blocking",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "ocp": {
                     "description": "over current protection limit provided on vbus power path",
@@ -221,19 +198,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -253,6 +222,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "usbCRedriverRetimer"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -272,15 +248,11 @@
                 },
                 "auxMux": {
                     "description": "whether chip supports internal muxing of aux pins",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "usbVersion": {
                     "description": "highest version of usb spec supported by redriver/retimer",
-                    "examples": [
+                    "enum": [
                         "2.0",
                         "3.1",
                         "3.1 gen2",
@@ -290,7 +262,7 @@
                 },
                 "dpVersion": {
                     "description": "highest version of dp spec supported by redriver/retimer",
-                    "examples": [
+                    "enum": [
                         "hbr2",
                         "hbr3"
                     ],
@@ -298,7 +270,7 @@
                 },
                 "tbtVersion": {
                     "description": "highest version of thunderbolt spec supported by redriver/retimer",
-                    "examples": [
+                    "enum": [
                         "2",
                         "3",
                         "4"
@@ -307,35 +279,27 @@
                 },
                 "pcieVersion": {
                     "description": "highest version of pcie spec supported by redriver/retimer",
-                    "examples": [
+                    "enum": [
                         "gen2",
                         "gen3"
                     ],
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
                     "type": "string"
                 },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -355,6 +319,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "usbCMux"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -374,11 +345,7 @@
                 },
                 "vconnPowerSupport": {
                     "description": "whether controller has support for vconn power",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "vconnPowerLimit": {
                     "description": "power limit supported by internal vconn switch (if supported)",
@@ -387,23 +354,15 @@
                 },
                 "redriving": {
                     "description": "whether a mux includes redriving support",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "auxMux": {
                     "description": "whether chip supports internal muxing of aux pins",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "usbVersion": {
                     "description": "highest version of usb spec supported by redriver/retimer",
-                    "examples": [
+                    "enum": [
                         "2.0",
                         "3.1",
                         "3.1 gen2",
@@ -413,7 +372,7 @@
                 },
                 "dpVersion": {
                     "description": "highest version of dp spec supported by redriver/retimer",
-                    "examples": [
+                    "enum": [
                         "hbr2",
                         "hbr3"
                     ],
@@ -421,7 +380,7 @@
                 },
                 "tbtVersion": {
                     "description": "highest version of thunderbolt spec supported by redriver/retimer",
-                    "examples": [
+                    "enum": [
                         "2",
                         "3",
                         "4"
@@ -430,35 +389,27 @@
                 },
                 "pcieVersion": {
                     "description": "highest version of pcie spec supported by redriver/retimer",
-                    "examples": [
+                    "enum": [
                         "gen2",
                         "gen3"
                     ],
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
                     "type": "string"
                 },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -467,6 +418,9 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
+            },
+            "dependencies": {
+                "vconnPowerLimit": ["vconnPowerSupport"]
             }
         },
         {
@@ -478,6 +432,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "usbCMuxPortController"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -497,7 +458,7 @@
                 },
                 "pdVersion": {
                     "description": "version of power delivery spec implemented by controller",
-                    "examples": [
+                    "enum": [
                         "pd2",
                         "pd3"
                     ],
@@ -505,11 +466,7 @@
                 },
                 "vconnPowerSupport": {
                     "description": "whether controller has support for vconn power",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "vconnPowerLimit": {
                     "description": "power limit supported by internal vconn switch (if supported)",
@@ -518,23 +475,15 @@
                 },
                 "redriving": {
                     "description": "whether a mux includes redriving support",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "auxMux": {
                     "description": "whether chip supports internal muxing of aux pins",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "usbVersion": {
                     "description": "highest version of usb spec supported by redriver/retimer",
-                    "examples": [
+                    "enum": [
                         "2.0",
                         "3.1",
                         "3.1 gen2",
@@ -544,7 +493,7 @@
                 },
                 "dpVersion": {
                     "description": "highest version of dp spec supported by redriver/retimer",
-                    "examples": [
+                    "enum": [
                         "hbr2",
                         "hbr3"
                     ],
@@ -552,7 +501,7 @@
                 },
                 "tbtVersion": {
                     "description": "highest version of thunderbolt spec supported by redriver/retimer",
-                    "examples": [
+                    "enum": [
                         "2",
                         "3",
                         "4"
@@ -561,35 +510,27 @@
                 },
                 "pcieVersion": {
                     "description": "highest version of pcie spec supported by redriver/retimer",
-                    "examples": [
+                    "enum": [
                         "gen2",
                         "gen3"
                     ],
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
                     "type": "string"
                 },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -598,6 +539,9 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
+            },
+            "dependencies": {
+                "vconnPowerLimit": ["vconnPowerSupport"]
             }
         },
         {
@@ -609,6 +553,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "redriver"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -633,9 +584,9 @@
                 "interface": {
                     "description": "list of interface(s) supported by redriver",
                     "examples": [
-                        "[hdmi2",
+                        "hdmi2",
                         "dp hbr3",
-                        "usb3.1 gen2]"
+                        "usb3.1 gen2"
                     ],
                     "type": "string"
                 },
@@ -644,29 +595,21 @@
                     "comment": "units of Hz",
                     "type": "number"
                 },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -686,6 +629,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "bridgeChip"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -715,41 +665,33 @@
                 "inputInterfaces": {
                     "description": "list of interfaces at the input of the bridge",
                     "examples": [
-                        "[hdmi2.0",
-                        "dp hbr2]"
+                        "hdmi2.0",
+                        "dp hbr2"
                     ],
                     "type": "string"
                 },
                 "outputInterfaces": {
                     "description": "list of interfaces at the output of the bridge",
                     "examples": [
-                        "[dp hbr2]"
+                        "dp hbr2"
                     ],
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
                     "type": "string"
                 },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -769,6 +711,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "levelShifter"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -811,19 +760,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

@@ -14,6 +14,13 @@
                 "type"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "ldo"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -33,7 +40,7 @@
                 },
                 "type": {
                     "description": "ldo type",
-                    "examples": [
+                    "enum": [
                         "fixed",
                         "adjustable"
                     ],
@@ -66,19 +73,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -99,6 +98,13 @@
                 "type"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "voltageRegulator"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -118,7 +124,7 @@
                 },
                 "type": {
                     "description": "switching voltage regulator type",
-                    "examples": [
+                    "enum": [
                         "buck",
                         "boost",
                         "buck-boost",
@@ -163,27 +169,15 @@
                 },
                 "integratedFets": {
                     "description": "whether the regulator contains integrated switching mosfets",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -203,6 +197,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "loadSwitch"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -252,11 +253,7 @@
                 },
                 "reverseCurrentBlocking": {
                     "description": "whether load switch has capability to block current flow from vout to vin",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "onResistance": {
                     "description": "nominal DC resistance of load switch when enabled",
@@ -265,19 +262,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -299,6 +288,13 @@
                 "batteryConfig"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "batteryCharger"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -318,7 +314,7 @@
                 },
                 "converterType": {
                     "description": "switching voltage regulator type",
-                    "examples": [
+                    "enum": [
                         "buck",
                         "boost",
                         "buck-boost",
@@ -328,7 +324,7 @@
                 },
                 "chargerTopology": {
                     "description": "type of battery charger topology (Narrow VDC vs Hybrid Power Boost)",
-                    "examples": [
+                    "enum": [
                         "nvdc",
                         "hpb"
                     ],
@@ -336,7 +332,7 @@
                 },
                 "batteryConfig": {
                     "description": "battery serial configurations supported by charger",
-                    "examples": [
+                    "enum": [
                         "1S",
                         "2S",
                         "3S",
@@ -376,59 +372,35 @@
                 },
                 "TCPCSupport": {
                     "description": "whether type-C port controller support is built in",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "BC12Support": {
                     "description": "whether bc 1.2 detection is built in",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "itegratedLoadSwitch": {
                     "description": "whether the charger contains integrated power path load switch(es)",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "integratedFets": {
                     "description": "whether the charger contains integrated switching mosfets",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
+                    "type": "boolean"
+                },
+                "firmwareVersion": {
+                    "description": "firmware version of the part",
                     "type": "string"
                 },
                 "softwareVersion": {
                     "description": "software version of the part",
                     "type": "string"
                 },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -448,6 +420,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "displayBacklightDriver"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -497,11 +476,7 @@
                 },
                 "integratedFets": {
                     "description": "whether the charger contains integrated switching mosfets",
-                    "examples": [
-                        "yes",
-                        "no"
-                    ],
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "currentMatchingAccuracy": {
                     "description": "current matching between LED strings",
@@ -516,25 +491,13 @@
                     "description": "software version of the part",
                     "type": "string"
                 },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -554,6 +517,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "pmic"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -611,21 +581,21 @@
                     ],
                     "type": "number"
                 },
+                "firmwareVersion": {
+                    "description": "firmware version of the part",
+                    "type": "string"
+                },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

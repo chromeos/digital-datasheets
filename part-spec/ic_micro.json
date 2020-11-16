@@ -13,6 +13,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "microcontrollerEcAsic"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -43,11 +50,11 @@
                 "interfaces": {
                     "description": "list of supported interfaces in a microprocessor",
                     "examples": [
-                        "[i2c",
+                        "i2c",
                         "spi",
                         "uart",
                         "espi",
-                        "etc.]"
+                        "etc"
                     ],
                     "type": "string"
                 },
@@ -58,29 +65,21 @@
                     ],
                     "type": "string"
                 },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

@@ -13,6 +13,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "accelerometer"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -33,10 +40,10 @@
                 "accelerationRanges": {
                     "description": "range of force that accelerometer can measure",
                     "examples": [
-                        "[2",
+                        "2",
                         "4",
                         "8",
-                        "16]"
+                        "16"
                     ],
                     "comment": "units of g",
                     "type": "number"
@@ -44,10 +51,10 @@
                 "sensitivity": {
                     "description": "smallest change in force accelerometer is able to capture (typical). Corresponds to levels in acceleration ranges",
                     "examples": [
-                        "[16000",
+                        "16000",
                         "8000",
                         "4000",
-                        "2000]"
+                        "2000"
                     ],
                     "comment": "units of LSB/g",
                     "type": "number"
@@ -58,10 +65,10 @@
                 },
                 "interface": {
                     "description": "interface(s) for communication to host",
-                    "examples": [
-                        "[i2c",
+                    "enum": [
+                        "i2c",
                         "spi",
-                        "analog]"
+                        "analog"
                     ],
                     "type": "string"
                 },
@@ -70,29 +77,21 @@
                     "comment": "units of Hz",
                     "type": "number"
                 },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -112,6 +111,13 @@
                 "datasheetVersion"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "accelerometerGyro"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -132,10 +138,10 @@
                 "accelerationRanges": {
                     "description": "range of force that accelerometer can measure",
                     "examples": [
-                        "[2",
+                        "2",
                         "4",
                         "8",
-                        "16]"
+                        "16"
                     ],
                     "comment": "units of g",
                     "type": "number"
@@ -143,10 +149,10 @@
                 "accelerationSensitivity": {
                     "description": "smallest change in force accelerometer is able to capture (typical). Corresponds to levels in acceleration ranges",
                     "examples": [
-                        "[16000",
+                        "16000",
                         "8000",
                         "4000",
-                        "2000]"
+                        "2000"
                     ],
                     "comment": "units of LSB/g",
                     "type": "number"
@@ -154,9 +160,9 @@
                 "gyroRanges": {
                     "description": "range of angular speed that gyro can measure",
                     "examples": [
-                        "[125",
+                        "125",
                         "250",
-                        "500]"
+                        "500"
                     ],
                     "comment": "units of degrees-per-second (dps)",
                     "type": "number"
@@ -164,9 +170,9 @@
                 "gyroSensitivity": {
                     "description": "smallest change in angular speed gyro is able to capture (typical). Corresponds to levels in gyro ranges",
                     "examples": [
-                        "[16",
+                        "16",
                         "32",
-                        "65]"
+                        "65"
                     ],
                     "comment": "units of LSB/dps",
                     "type": "number"
@@ -178,35 +184,27 @@
                 "interface": {
                     "description": "interface(s) for communication to host",
                     "examples": [
-                        "[i2c",
+                        "i2c",
                         "spi",
-                        "analog]"
+                        "analog"
                     ],
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
                     "type": "string"
                 },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -227,6 +225,13 @@
                 "type"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "magneticSensor"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -246,7 +251,7 @@
                 },
                 "type": {
                     "description": "method by which magnetism is detected",
-                    "examples": [
+                    "enum": [
                         "gmr",
                         "hall effect"
                     ],
@@ -262,29 +267,21 @@
                     "comment": "units of mT",
                     "type": "number"
                 },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
                     "type": "string"
                 },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -305,6 +302,13 @@
                 "type"
             ],
             "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "thermal"
+                    ]
+                },
                 "manufacturer": {
                     "description": "company that manufacturers the part",
                     "type": "string"
@@ -324,7 +328,7 @@
                 },
                 "type": {
                     "description": "method by which temperature is detected",
-                    "examples": [
+                    "enum": [
                         "rtd",
                         "thermistor",
                         "silicon bandgap"
@@ -333,10 +337,10 @@
                 },
                 "interface": {
                     "description": "interface(s) for communication to host",
-                    "examples": [
-                        "[i2c",
+                    "enum": [
+                        "i2c",
                         "spi",
-                        "analog]"
+                        "analog"
                     ],
                     "type": "string"
                 },
@@ -347,19 +351,11 @@
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "automotive": {
                     "description": "whether a part is automotive qualified",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
