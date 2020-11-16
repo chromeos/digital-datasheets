@@ -14,6 +14,10 @@
                     "description": "name of pin as defined by datasheet",
                     "type": "string"
                 },
+                "description": {
+                    "description": "human readable description of a pin's use",
+                    "type": "string"
+                },
                 "functions" : {
                     "description": "list of functions an individual pin can have",
                     "comment": "should map 1:1 with directions",
@@ -103,11 +107,7 @@
                 },
                 "floatUnused": {
                     "description": "description of whether pin can safely be floated if it is not used",
-                    "type": "string",
-                    "enum": [
-                        "yes",
-                        "no"
-                    ]
+                    "type": "boolean"
                 },
                 "externalComponents": {
                     "description": "list of external component structures recommended to be attached to a pin",
@@ -163,7 +163,10 @@
                     "type": "string",
                     "enum": [
                         "ohms",
+                        "kilo ohms",
+                        "mega ohms",
                         "micro farads",
+                        "pico farads",
                         "micro heneries"
                     ]
                 },
