@@ -8,6 +8,7 @@
             "title": "ssd",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -41,7 +42,7 @@
                 },
                 "type": {
                     "description": "type of ssd storage as defined by interface and technology",
-                    "enum": [
+                    "examples": [
                         "emmc",
                         "sata",
                         "nvme"
@@ -96,6 +97,7 @@
             "title": "sd card reader",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -128,7 +130,7 @@
                 },
                 "type": {
                     "description": "type of sd card reader",
-                    "enum": [
+                    "examples": [
                         "micro",
                         "mini",
                         "full size"
@@ -164,6 +166,7 @@
             "title": "dram",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -197,7 +200,7 @@
                 },
                 "type": {
                     "description": "type of dram",
-                    "enum": [
+                    "examples": [
                         "lpddr3",
                         "ddr3",
                         "lpddr4",
@@ -247,6 +250,7 @@
             "title": "rom",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -286,7 +290,7 @@
                 "interface": {
                     "description": "interace of rom to host",
                     "type": "string",
-                    "enum": [
+                    "examples": [
                         "spi",
                         "i2c"
                     ]

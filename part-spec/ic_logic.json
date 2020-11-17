@@ -8,6 +8,7 @@
             "title": "logic gate",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -85,6 +86,7 @@
             "title": "clock",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion"
@@ -187,6 +189,7 @@
             "title": "power sequencing",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion"

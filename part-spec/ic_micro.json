@@ -8,6 +8,7 @@
             "title": "microcontroller/ec/asic",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion"

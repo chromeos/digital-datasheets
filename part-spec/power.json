@@ -8,6 +8,7 @@
             "title": "ldo",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -92,6 +93,7 @@
             "title": "voltage regulator",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -124,7 +126,7 @@
                 },
                 "type": {
                     "description": "switching voltage regulator type",
-                    "enum": [
+                    "examples": [
                         "buck",
                         "boost",
                         "buck-boost",
@@ -192,6 +194,7 @@
             "title": "load switch",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion"
@@ -281,6 +284,7 @@
             "title": "battery charger",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -314,7 +318,7 @@
                 },
                 "converterType": {
                     "description": "switching voltage regulator type",
-                    "enum": [
+                    "examples": [
                         "buck",
                         "boost",
                         "buck-boost",
@@ -415,6 +419,7 @@
             "title": "display backlight driver",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion"
@@ -512,6 +517,7 @@
             "title": "PMIC",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion"

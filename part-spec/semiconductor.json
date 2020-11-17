@@ -8,6 +8,7 @@
             "title": "transistor",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -90,8 +91,8 @@
                 "rdsonCondition": {
                     "description": "description of the gate-source voltage and drain current under which rdson is measured",
                     "examples": [
-                        "\"vgs = 2.5V",
-                        "id = 1A\""
+                        "vgs = 2.5V",
+                        "id = 1A"
                     ],
                     "type": "string"
                 },
@@ -113,8 +114,8 @@
                 "chargeCondition": {
                     "description": "description of the drain-source voltage and drain current under which gate charge is measured",
                     "examples": [
-                        "\"vds = 6V",
-                        "id = 1A\""
+                        "vds = 6V",
+                        "id = 1A"
                     ],
                     "type": "string"
                 },
@@ -142,6 +143,7 @@
             "title": "diode",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -174,7 +176,7 @@
                 },
                 "type": {
                     "description": "type of diode",
-                    "enum": [
+                    "examples": [
                         "zener",
                         "schottky",
                         "esd"

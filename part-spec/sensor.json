@@ -8,6 +8,7 @@
             "title": "accelerometer",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion"
@@ -65,7 +66,7 @@
                 },
                 "interface": {
                     "description": "interface(s) for communication to host",
-                    "enum": [
+                    "examples": [
                         "i2c",
                         "spi",
                         "analog"
@@ -106,6 +107,7 @@
             "title": "accelerometer/gyro",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion"
@@ -219,6 +221,7 @@
             "title": "magnetic sensor",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -296,6 +299,7 @@
             "title": "thermal",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -328,7 +332,7 @@
                 },
                 "type": {
                     "description": "method by which temperature is detected",
-                    "enum": [
+                    "examples": [
                         "rtd",
                         "thermistor",
                         "silicon bandgap"

@@ -8,6 +8,7 @@
             "title": "resistor",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -93,13 +94,16 @@
                 }
             },
             "dependencies": {
-                "packageFormat": ["package"]
+                "packageFormat": [
+                    "package"
+                ]
             }
         },
         {
             "title": "capacitor",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -219,13 +223,16 @@
                 }
             },
             "dependencies": {
-                "packageFormat": ["package"]
+                "packageFormat": [
+                    "package"
+                ]
             }
         },
         {
             "title": "inductor",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion",
@@ -328,13 +335,16 @@
                 }
             },
             "dependencies": {
-                "packageFormat": ["package"]
+                "packageFormat": [
+                    "package"
+                ]
             }
         },
         {
             "title": "common mode choke",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion"
@@ -430,13 +440,16 @@
                 }
             },
             "dependencies": {
-                "packageFormat": ["package"]
+                "packageFormat": [
+                    "package"
+                ]
             }
         },
         {
             "title": "ferrite bead",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion"
@@ -520,7 +533,9 @@
                 }
             },
             "dependencies": {
-                "packageFormat": ["package"]
+                "packageFormat": [
+                    "package"
+                ]
             }
         }
     ]

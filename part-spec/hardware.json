@@ -8,6 +8,7 @@
             "title": "switch",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion"
@@ -111,6 +112,7 @@
             "title": "connector",
             "type": "object",
             "required": [
+                "partType",
                 "manufacturer",
                 "mpn",
                 "datasheetVersion"
