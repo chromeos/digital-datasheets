@@ -1,8 +1,0 @@
-pdVersion
-dpVersion
-usbVersion
-tbtVersion
-pcieVersion
-
-
-Check for preserved quotes
