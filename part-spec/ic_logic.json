@@ -1,0 +1,260 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic logic.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ic logic",
+    "oneOf": [
+        {
+            "title": "logic gate",
+            "type": "object",
+            "required": [
+                "partType",
+                "manufacturer",
+                "mpn",
+                "datasheetVersion",
+                "type"
+            ],
+            "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "logicGate"
+                    ]
+                },
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "type": {
+                    "description": "logical operation performed by logic gate",
+                    "enum": [
+                        "and",
+                        "or",
+                        "nor",
+                        "nand",
+                        "inverter",
+                        "buffer",
+                        "configurable"
+                    ],
+                    "type": "string"
+                },
+                "numberGates": {
+                    "description": "number of logical gates encapsulated in logic IC",
+                    "type": "number"
+                },
+                "schmittTrigger": {
+                    "description": "property describing whether logic gate has schmitt trigger inputs",
+                    "type": "boolean"
+                },
+                "propagationDelay": {
+                    "description": "time between input changing to output changing",
+                    "comment": "units of seconds",
+                    "type": "number"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "boolean"
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "boolean"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "clock",
+            "type": "object",
+            "required": [
+                "partType",
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "clock"
+                    ]
+                },
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "fixedFrequency": {
+                    "description": "clock frequency value if the clock has a fixed frequency",
+                    "comment": "units of Hz",
+                    "type": "number"
+                },
+                "minFrequency": {
+                    "description": "minimum clock frequency value if the clock has a configurable frequency",
+                    "comment": "units of Hz",
+                    "type": "number"
+                },
+                "maxFrequency": {
+                    "description": "maximum clock frequency value if the clock has a configurable frequency",
+                    "comment": "units of Hz",
+                    "type": "number"
+                },
+                "numberClockOutputs": {
+                    "description": "number of clock outputs in a clock IC",
+                    "type": "number"
+                },
+                "diffSingleEnded": {
+                    "description": "property describing whether a clock output is single ended or differential",
+                    "enum": [
+                        "diff",
+                        "single"
+                    ],
+                    "type": "string"
+                },
+                "jitter": {
+                    "description": "cycle to cycle clock jitter",
+                    "comment": "units of seconds",
+                    "type": "number"
+                },
+                "frequencyTolerance": {
+                    "description": "amount of frequency variation specced from nominal frequency",
+                    "comment": "units of percentage",
+                    "type": "number"
+                },
+                "psrr": {
+                    "description": "power supply rejection ratio or ratio between power supply variation and output variation",
+                    "comment": "units of dB",
+                    "type": "number"
+                },
+                "outputFormat": {
+                    "description": "signal format of clock output",
+                    "examples": [
+                        "lvpecl",
+                        "lvds",
+                        "hcsl",
+                        "etc."
+                    ],
+                    "type": "string"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "boolean"
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "boolean"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "power sequencing",
+            "type": "object",
+            "required": [
+                "partType",
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "powerSequencing"
+                    ]
+                },
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "targetApplication": {
+                    "description": "description of intended power sequencing chip application (example: KBL SOC, LPDDR4 memory, etc.)",
+                    "type": "string"
+                },
+                "fixedConfigurable": {
+                    "description": "description of whether a power sequencing IC has fixed or configurable logic",
+                    "enum": [
+                        "fixed",
+                        "configurable"
+                    ],
+                    "type": "string"
+                },
+                "firmwareVersion": {
+                    "description": "firmware version of the part",
+                    "type": "string"
+                },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "boolean"
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "boolean"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,374 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/sensor.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "sensor",
+    "oneOf": [
+        {
+            "title": "accelerometer",
+            "type": "object",
+            "required": [
+                "partType",
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "accelerometer"
+                    ]
+                },
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "accelerationRanges": {
+                    "description": "range of force that accelerometer can measure",
+                    "examples": [
+                        "2",
+                        "4",
+                        "8",
+                        "16"
+                    ],
+                    "comment": "units of g",
+                    "type": "number"
+                },
+                "sensitivity": {
+                    "description": "smallest change in force accelerometer is able to capture (typical). Corresponds to levels in acceleration ranges",
+                    "examples": [
+                        "16000",
+                        "8000",
+                        "4000",
+                        "2000"
+                    ],
+                    "comment": "units of LSB/g",
+                    "type": "number"
+                },
+                "axis": {
+                    "description": "number of axes of acceleration measurement",
+                    "type": "number"
+                },
+                "interface": {
+                    "description": "interface(s) for communication to host",
+                    "examples": [
+                        "i2c",
+                        "spi",
+                        "analog"
+                    ],
+                    "type": "string"
+                },
+                "bandwidth": {
+                    "description": "bandwidth of acceleration measurement",
+                    "comment": "units of Hz",
+                    "type": "number"
+                },
+                "firmwareVersion": {
+                    "description": "firmware version of the part",
+                    "type": "string"
+                },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "boolean"
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "boolean"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "accelerometer/gyro",
+            "type": "object",
+            "required": [
+                "partType",
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "accelerometerGyro"
+                    ]
+                },
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "accelerationRanges": {
+                    "description": "range of force that accelerometer can measure",
+                    "examples": [
+                        "2",
+                        "4",
+                        "8",
+                        "16"
+                    ],
+                    "comment": "units of g",
+                    "type": "number"
+                },
+                "accelerationSensitivity": {
+                    "description": "smallest change in force accelerometer is able to capture (typical). Corresponds to levels in acceleration ranges",
+                    "examples": [
+                        "16000",
+                        "8000",
+                        "4000",
+                        "2000"
+                    ],
+                    "comment": "units of LSB/g",
+                    "type": "number"
+                },
+                "gyroRanges": {
+                    "description": "range of angular speed that gyro can measure",
+                    "examples": [
+                        "125",
+                        "250",
+                        "500"
+                    ],
+                    "comment": "units of degrees-per-second (dps)",
+                    "type": "number"
+                },
+                "gyroSensitivity": {
+                    "description": "smallest change in angular speed gyro is able to capture (typical). Corresponds to levels in gyro ranges",
+                    "examples": [
+                        "16",
+                        "32",
+                        "65"
+                    ],
+                    "comment": "units of LSB/dps",
+                    "type": "number"
+                },
+                "axis": {
+                    "description": "number of axes of measurement",
+                    "type": "number"
+                },
+                "interface": {
+                    "description": "interface(s) for communication to host",
+                    "examples": [
+                        "i2c",
+                        "spi",
+                        "analog"
+                    ],
+                    "type": "string"
+                },
+                "firmwareVersion": {
+                    "description": "firmware version of the part",
+                    "type": "string"
+                },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "boolean"
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "boolean"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "magnetic sensor",
+            "type": "object",
+            "required": [
+                "partType",
+                "manufacturer",
+                "mpn",
+                "datasheetVersion",
+                "type"
+            ],
+            "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "magneticSensor"
+                    ]
+                },
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "type": {
+                    "description": "method by which magnetism is detected",
+                    "enum": [
+                        "gmr",
+                        "hall effect"
+                    ],
+                    "type": "string"
+                },
+                "trip": {
+                    "description": "magnetic threshold causing the sensor to output high",
+                    "comment": "units of mT",
+                    "type": "number"
+                },
+                "release": {
+                    "description": "magnetic threshold causing the sensor to output low",
+                    "comment": "units of mT",
+                    "type": "number"
+                },
+                "firmwareVersion": {
+                    "description": "firmware version of the part",
+                    "type": "string"
+                },
+                "softwareVersion": {
+                    "description": "software version of the part",
+                    "type": "string"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "boolean"
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "boolean"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "thermal",
+            "type": "object",
+            "required": [
+                "partType",
+                "manufacturer",
+                "mpn",
+                "datasheetVersion",
+                "type"
+            ],
+            "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "thermal"
+                    ]
+                },
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "type": {
+                    "description": "method by which temperature is detected",
+                    "examples": [
+                        "rtd",
+                        "thermistor",
+                        "silicon bandgap"
+                    ],
+                    "type": "string"
+                },
+                "interface": {
+                    "description": "interface(s) for communication to host",
+                    "enum": [
+                        "i2c",
+                        "spi",
+                        "analog"
+                    ],
+                    "type": "string"
+                },
+                "resolution": {
+                    "description": "maximum resolution of temperature sensor",
+                    "comment": "units of degreesC/LSD",
+                    "type": "number"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "boolean"
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "boolean"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        }
+    ]
+}
