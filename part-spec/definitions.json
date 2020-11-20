@@ -120,7 +120,7 @@
         },
         "externalComponents": {
             "type": "object",
-            "required": ["type", "name"],
+            "required": ["type", "configuration"],
             "properties": {
                 "type" : {
                     "description": "type of component connected to a pin",
