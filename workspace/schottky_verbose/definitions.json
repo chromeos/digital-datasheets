@@ -1,0 +1,105 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/definitions.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "value": {
+          "type": "object",
+          "properties": {
+              "min": { "type": "number" },
+              "max": { "type": "number" },
+              "typical": { "type": "number" },
+              "unitText": { "type": "string" },
+              "unitFactor": { "type": "number" }
+          },
+          "required": ["unitText", "unitFactor"]
+        },
+        "vf" : {
+            "type": "object",
+            "properties": {
+                "vfValue" : {"$ref": "#value"},
+                "condition" : {"$ref": "#vfCondition"}
+            }
+        },
+        "vfCondition": {
+            "type": "object",
+            "properties": {
+                "if": {
+                    "description": "forward current under which condition is measured",
+                    "$ref": "#value"
+                },
+                "junctionT": {
+                    "description": "junction temperature under which condition is measured",
+                    "$ref": "#value"
+                },
+                "pulseDuration": {
+                    "description": "duration of pulse under which condition is measured",
+                    "$ref": "#value"
+                },
+                "dutyCycle": {
+                    "description": "duty cycle of pulse under which condition is measured",
+                    "$ref": "#value"
+                }
+            },
+            "required": ["if"]
+        },
+        "ir" : {
+            "type": "object",
+            "properties": {
+                "irValue" : {"$ref": "#value"},
+                "condition" : {"$ref": "#irCondition"}
+            }
+        },
+        "irCondition": {
+            "type": "object",
+            "properties": {
+                "vr": {
+                    "description": "reverse voltage under which condition is measured",
+                    "$ref": "#value"
+                },
+                "junctionT": {
+                    "description": "junction temperature under which condition is measured",
+                    "$ref": "#value"
+                },
+                "pulseDuration": {
+                    "description": "duration of pulse under which condition is measured",
+                    "$ref": "#value"
+                },
+                "dutyCycle": {
+                    "description": "duty cycle of pulse under which condition is measured",
+                    "$ref": "#value"
+                }
+            },
+            "required": ["vr"]
+        },
+        "ifmCondition": {
+            "junctionT": {
+                "description": "junction temperature under which condition is measured",
+                "$ref": "#value"
+            },
+            "dutyCycle": {
+                "description": "duty cycle of pulse under which condition is measured",
+                "$ref": "#value"
+            }
+        },
+        "ifrmCondition": {
+            "junctionT": {
+                "description": "junction temperature under which condition is measured",
+                "$ref": "#value"
+            },
+            "pulseDuration": {
+                "description": "duration of pulse under which condition is measured",
+                "$ref": "#value"
+            }
+        },
+        "ifsmCondition": {
+            "junctionT": {
+                "description": "junction temperature under which condition is measured",
+                "$ref": "#value"
+            },
+            "pulseDuration": {
+                "description": "duration of pulse under which condition is measured",
+                "$ref": "#value"
+            }
+        }
+    }
+}

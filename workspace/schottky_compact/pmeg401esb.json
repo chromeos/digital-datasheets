@@ -1,0 +1,94 @@
+{
+    "partType": "diode",
+    "manufacturer": "nexperia",
+    "mpn": "pmeg4010esb",
+    "datasheetVersion": "v3",
+    "releaseDate": "2021-03-31",
+    "type": "schottky",
+    "vf": [{
+        "value": {
+            "max": 610,
+            "typical": 510,
+            "unitText": "mV",
+            "unitFactor": 0.001
+        },
+        "condition": {
+            "if" : {
+                "typical": 1,
+                "unitText": "A",
+                "unitFactor": 1
+            }
+        }
+
+    }],
+    "ifm": {
+        "max": 1.4,
+        "unitText": "A",
+        "unitFactor": 1
+    },
+    "condition": {
+        "junctionT": {
+            "typical": 135,
+            "unitText": "C",
+            "unitFactor": 1
+        },
+        "dutyCycle": {
+            "typical": 1,
+            "unitText": "%",
+            "unitFactor": 1
+        }
+    },
+    "ir": [{
+        "irValue": {
+            "max": 4,
+            "typical": 1,
+            "unitText": "uA",
+            "unitFactor": 1e-6
+        },
+        "condition": {
+            "vr" : {
+                "typical": 10,
+                "unitText": "V",
+                "unitFactor": 1
+            }
+        }
+
+    },
+    {
+        "irValue": {
+            "max": 6,
+            "typical": 2.1,
+            "unitText": "uA",
+            "unitFactor": 1e-6
+        },
+        "condition": {
+            "vr" : {
+                "typical": 20,
+                "unitText": "V",
+                "unitFactor": 1
+            }
+        }
+
+    }],
+    "esdProtection": false,
+    "rohs": true,
+    "automotive": false,
+    "pins": [
+        {
+            "number": "1",
+            "name": "K",
+            "description": "cathode",
+            "directions": ["analog"]
+        },
+        {
+            "number": "2",
+            "name": "A",
+            "description": "anode",
+            "directions": ["analog"]
+        }
+    ]
+ }
+
+
+
+

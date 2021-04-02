@@ -1,0 +1,107 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/semiconductor.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "diode",
+    "oneOf": [
+        {
+            "title": "schottky",
+            "type": "object",
+            "required": [
+                "partType",
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "schottky"
+                    ]
+                },
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "releaseDate": {
+                    "description": "date when datasheet was released",
+                    "type": "string",
+                    "format": "date"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "vf": {
+                    "description": "forward voltage of a diode and associated conditions",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#vf"
+                    }
+                },
+                "ifm": {
+                    "description": "maximum continuous forward current a diode can support",
+                    "$ref": "#value"
+                },
+                "ifmCondition": {
+                    "description": "condition under which maximum continuous forward current is measured",
+                    "$ref": "#ifmCondition"
+                },
+                "ifrm": {
+                    "description": "maximum repetitive peak forward current a diode can support",
+                    "$ref": "#value"
+                },
+                "ifrmCondition": {
+                    "description": "condition under which maximum repetitive peak forward current is measured",
+                    "$ref": "#ifrmCondition"
+                },
+                "ifsm": {
+                    "description": "maximum non-repetitive surge forward current a diode can support",
+                    "$ref": "#value"
+                },
+                "ifsmCondition": {
+                    "description": "condition under which maximum non-repetitive surge forward current is measured",
+                    "$ref": "#value"
+                },
+                "vbr": {
+                    "description": "breakdown voltage of a diode",
+                    "$ref": "#value"
+                },
+                "ir": {
+                    "description": "reverse leakage current and associated conditions",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#vf"
+                    }
+                },
+                "esdProtection": {
+                    "description": "whether a diode has built in esd protection",
+                    "type": "boolean"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            },
+            "dependencies": {
+                "ifmCondition": ["ifm"],
+                "ifrmCondition": ["ifrm"],
+                "ifsmCondition": ["ifsm"]
+            }
+        }
+    ]
+}
